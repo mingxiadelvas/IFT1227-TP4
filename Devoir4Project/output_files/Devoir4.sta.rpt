@@ -1,0 +1,1401 @@
+TimeQuest Timing Analyzer report for Devoir4
+Sat May 01 20:18:18 2021
+Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. TimeQuest Timing Analyzer Summary
+  3. Parallel Compilation
+  4. Clocks
+  5. Slow Model Fmax Summary
+  6. Slow Model Setup Summary
+  7. Slow Model Hold Summary
+  8. Slow Model Recovery Summary
+  9. Slow Model Removal Summary
+ 10. Slow Model Minimum Pulse Width Summary
+ 11. Slow Model Setup: 'clk'
+ 12. Slow Model Hold: 'clk'
+ 13. Slow Model Minimum Pulse Width: 'clk'
+ 14. Clock to Output Times
+ 15. Minimum Clock to Output Times
+ 16. Fast Model Setup Summary
+ 17. Fast Model Hold Summary
+ 18. Fast Model Recovery Summary
+ 19. Fast Model Removal Summary
+ 20. Fast Model Minimum Pulse Width Summary
+ 21. Fast Model Setup: 'clk'
+ 22. Fast Model Hold: 'clk'
+ 23. Fast Model Minimum Pulse Width: 'clk'
+ 24. Clock to Output Times
+ 25. Minimum Clock to Output Times
+ 26. Multicorner Timing Analysis Summary
+ 27. Clock to Output Times
+ 28. Minimum Clock to Output Times
+ 29. Setup Transfers
+ 30. Hold Transfers
+ 31. Report TCCS
+ 32. Report RSKM
+ 33. Unconstrained Paths
+ 34. TimeQuest Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++----------------------------------------------------------------------------------------+
+; TimeQuest Timing Analyzer Summary                                                      ;
++--------------------+-------------------------------------------------------------------+
+; Quartus II Version ; Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition ;
+; Revision Name      ; Devoir4                                                           ;
+; Device Family      ; Cyclone II                                                        ;
+; Device Name        ; EP2C70F672C6                                                      ;
+; Timing Models      ; Final                                                             ;
+; Delay Model        ; Combined                                                          ;
+; Rise/Fall Delays   ; Unavailable                                                       ;
++--------------------+-------------------------------------------------------------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 8      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clocks                                                                                                                                                                          ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------+
+; Clock Name ; Type ; Period ; Frequency  ; Rise  ; Fall  ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------+
+; clk        ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { clk } ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------+
+
+
++-------------------------------------------------+
+; Slow Model Fmax Summary                         ;
++-----------+-----------------+------------+------+
+; Fmax      ; Restricted Fmax ; Clock Name ; Note ;
++-----------+-----------------+------------+------+
+; 46.46 MHz ; 46.46 MHz       ; clk        ;      ;
++-----------+-----------------+------------+------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
++---------------------------------+
+; Slow Model Setup Summary        ;
++-------+---------+---------------+
+; Clock ; Slack   ; End Point TNS ;
++-------+---------+---------------+
+; clk   ; -20.523 ; -47832.726    ;
++-------+---------+---------------+
+
+
++-------------------------------+
+; Slow Model Hold Summary       ;
++-------+-------+---------------+
+; Clock ; Slack ; End Point TNS ;
++-------+-------+---------------+
+; clk   ; 0.391 ; 0.000         ;
++-------+-------+---------------+
+
+
+-------------------------------
+; Slow Model Recovery Summary ;
+-------------------------------
+No paths to report.
+
+
+------------------------------
+; Slow Model Removal Summary ;
+------------------------------
+No paths to report.
+
+
++----------------------------------------+
+; Slow Model Minimum Pulse Width Summary ;
++-------+--------+-----------------------+
+; Clock ; Slack  ; End Point TNS         ;
++-------+--------+-----------------------+
+; clk   ; -1.380 ; -3079.380             ;
++-------+--------+-----------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Setup: 'clk'                                                                                                                                                        ;
++---------+----------------------------------------------+-------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack   ; From Node                                    ; To Node                                         ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++---------+----------------------------------------------+-------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; -20.523 ; proc_mips:mips1|datapath:dp|flopr:pcreg|q[4] ; proc_mips:mips1|datapath:dp|regfile:rf|mem~88   ; clk          ; clk         ; 1.000        ; 0.004      ; 21.563     ;
+; -20.503 ; proc_mips:mips1|datapath:dp|flopr:pcreg|q[5] ; proc_mips:mips1|datapath:dp|regfile:rf|mem~88   ; clk          ; clk         ; 1.000        ; 0.004      ; 21.543     ;
+; -20.429 ; proc_mips:mips1|datapath:dp|flopr:pcreg|q[2] ; proc_mips:mips1|datapath:dp|regfile:rf|mem~382  ; clk          ; clk         ; 1.000        ; 0.032      ; 21.497     ;
+; -20.408 ; proc_mips:mips1|datapath:dp|flopr:pcreg|q[3] ; proc_mips:mips1|datapath:dp|regfile:rf|mem~382  ; clk          ; clk         ; 1.000        ; 0.032      ; 21.476     ;
+; -20.401 ; proc_mips:mips1|datapath:dp|flopr:pcreg|q[2] ; proc_mips:mips1|datapath:dp|regfile:rf|mem~88   ; clk          ; clk         ; 1.000        ; 0.004      ; 21.441     ;
+; -20.398 ; proc_mips:mips1|datapath:dp|flopr:pcreg|q[4] ; proc_mips:mips1|datapath:dp|regfile:rf|mem~382  ; clk          ; clk         ; 1.000        ; 0.032      ; 21.466     ;
+; -20.393 ; proc_mips:mips1|datapath:dp|flopr:pcreg|q[4] ; proc_mips:mips1|datapath:dp|regfile:rf|mem~54   ; clk          ; clk         ; 1.000        ; 0.030      ; 21.459     ;
+; -20.392 ; proc_mips:mips1|datapath:dp|flopr:pcreg|q[4] ; proc_mips:mips1|datapath:dp|regfile:rf|mem~310  ; clk          ; clk         ; 1.000        ; 0.030      ; 21.458     ;
+; -20.378 ; proc_mips:mips1|datapath:dp|flopr:pcreg|q[5] ; proc_mips:mips1|datapath:dp|regfile:rf|mem~382  ; clk          ; clk         ; 1.000        ; 0.032      ; 21.446     ;
+; -20.374 ; proc_mips:mips1|datapath:dp|flopr:pcreg|q[4] ; proc_mips:mips1|datapath:dp|regfile:rf|mem~216  ; clk          ; clk         ; 1.000        ; 0.004      ; 21.414     ;
+; -20.373 ; proc_mips:mips1|datapath:dp|flopr:pcreg|q[5] ; proc_mips:mips1|datapath:dp|regfile:rf|mem~54   ; clk          ; clk         ; 1.000        ; 0.030      ; 21.439     ;
+; -20.372 ; proc_mips:mips1|datapath:dp|flopr:pcreg|q[5] ; proc_mips:mips1|datapath:dp|regfile:rf|mem~310  ; clk          ; clk         ; 1.000        ; 0.030      ; 21.438     ;
+; -20.364 ; proc_mips:mips1|datapath:dp|flopr:pcreg|q[3] ; proc_mips:mips1|datapath:dp|regfile:rf|mem~88   ; clk          ; clk         ; 1.000        ; 0.004      ; 21.404     ;
+; -20.361 ; proc_mips:mips1|datapath:dp|flopr:pcreg|q[2] ; proc_mips:mips1|datapath:dp|regfile:rf|mem~734  ; clk          ; clk         ; 1.000        ; -0.003     ; 21.394     ;
+; -20.357 ; proc_mips:mips1|datapath:dp|flopr:pcreg|q[2] ; proc_mips:mips1|datapath:dp|regfile:rf|mem~766  ; clk          ; clk         ; 1.000        ; -0.003     ; 21.390     ;
+; -20.354 ; proc_mips:mips1|datapath:dp|flopr:pcreg|q[5] ; proc_mips:mips1|datapath:dp|regfile:rf|mem~216  ; clk          ; clk         ; 1.000        ; 0.004      ; 21.394     ;
+; -20.340 ; proc_mips:mips1|datapath:dp|flopr:pcreg|q[3] ; proc_mips:mips1|datapath:dp|regfile:rf|mem~734  ; clk          ; clk         ; 1.000        ; -0.003     ; 21.373     ;
+; -20.336 ; proc_mips:mips1|datapath:dp|flopr:pcreg|q[3] ; proc_mips:mips1|datapath:dp|regfile:rf|mem~766  ; clk          ; clk         ; 1.000        ; -0.003     ; 21.369     ;
+; -20.330 ; proc_mips:mips1|datapath:dp|flopr:pcreg|q[4] ; proc_mips:mips1|datapath:dp|regfile:rf|mem~734  ; clk          ; clk         ; 1.000        ; -0.003     ; 21.363     ;
+; -20.326 ; proc_mips:mips1|datapath:dp|flopr:pcreg|q[4] ; proc_mips:mips1|datapath:dp|regfile:rf|mem~766  ; clk          ; clk         ; 1.000        ; -0.003     ; 21.359     ;
+; -20.311 ; proc_mips:mips1|datapath:dp|flopr:pcreg|q[4] ; proc_mips:mips1|datapath:dp|regfile:rf|mem~86   ; clk          ; clk         ; 1.000        ; 0.026      ; 21.373     ;
+; -20.310 ; proc_mips:mips1|datapath:dp|flopr:pcreg|q[5] ; proc_mips:mips1|datapath:dp|regfile:rf|mem~734  ; clk          ; clk         ; 1.000        ; -0.003     ; 21.343     ;
+; -20.308 ; proc_mips:mips1|datapath:dp|flopr:pcreg|q[4] ; proc_mips:mips1|datapath:dp|regfile:rf|mem~470  ; clk          ; clk         ; 1.000        ; 0.026      ; 21.370     ;
+; -20.306 ; proc_mips:mips1|datapath:dp|flopr:pcreg|q[5] ; proc_mips:mips1|datapath:dp|regfile:rf|mem~766  ; clk          ; clk         ; 1.000        ; -0.003     ; 21.339     ;
+; -20.291 ; proc_mips:mips1|datapath:dp|flopr:pcreg|q[5] ; proc_mips:mips1|datapath:dp|regfile:rf|mem~86   ; clk          ; clk         ; 1.000        ; 0.026      ; 21.353     ;
+; -20.288 ; proc_mips:mips1|datapath:dp|flopr:pcreg|q[5] ; proc_mips:mips1|datapath:dp|regfile:rf|mem~470  ; clk          ; clk         ; 1.000        ; 0.026      ; 21.350     ;
+; -20.268 ; proc_mips:mips1|datapath:dp|flopr:pcreg|q[2] ; proc_mips:mips1|datapath:dp|regfile:rf|mem~698  ; clk          ; clk         ; 1.000        ; -0.001     ; 21.303     ;
+; -20.268 ; proc_mips:mips1|datapath:dp|flopr:pcreg|q[2] ; proc_mips:mips1|datapath:dp|regfile:rf|mem~730  ; clk          ; clk         ; 1.000        ; -0.001     ; 21.303     ;
+; -20.262 ; proc_mips:mips1|datapath:dp|flopr:pcreg|q[2] ; proc_mips:mips1|datapath:dp|regfile:rf|mem~54   ; clk          ; clk         ; 1.000        ; 0.030      ; 21.328     ;
+; -20.261 ; proc_mips:mips1|datapath:dp|flopr:pcreg|q[2] ; proc_mips:mips1|datapath:dp|regfile:rf|mem~310  ; clk          ; clk         ; 1.000        ; 0.030      ; 21.327     ;
+; -20.256 ; proc_mips:mips1|datapath:dp|flopr:pcreg|q[4] ; proc_mips:mips1|datapath:dp|regfile:rf|mem~696  ; clk          ; clk         ; 1.000        ; 0.001      ; 21.293     ;
+; -20.256 ; proc_mips:mips1|datapath:dp|flopr:pcreg|q[4] ; proc_mips:mips1|datapath:dp|regfile:rf|mem~760  ; clk          ; clk         ; 1.000        ; 0.001      ; 21.293     ;
+; -20.252 ; proc_mips:mips1|datapath:dp|flopr:pcreg|q[2] ; proc_mips:mips1|datapath:dp|regfile:rf|mem~216  ; clk          ; clk         ; 1.000        ; 0.004      ; 21.292     ;
+; -20.249 ; proc_mips:mips1|datapath:dp|flopr:pcreg|q[4] ; proc_mips:mips1|datapath:dp|regfile:rf|mem~921  ; clk          ; clk         ; 1.000        ; 0.036      ; 21.321     ;
+; -20.247 ; proc_mips:mips1|datapath:dp|flopr:pcreg|q[4] ; proc_mips:mips1|datapath:dp|regfile:rf|mem~1014 ; clk          ; clk         ; 1.000        ; 0.007      ; 21.290     ;
+; -20.247 ; proc_mips:mips1|datapath:dp|flopr:pcreg|q[3] ; proc_mips:mips1|datapath:dp|regfile:rf|mem~698  ; clk          ; clk         ; 1.000        ; -0.001     ; 21.282     ;
+; -20.247 ; proc_mips:mips1|datapath:dp|flopr:pcreg|q[3] ; proc_mips:mips1|datapath:dp|regfile:rf|mem~730  ; clk          ; clk         ; 1.000        ; -0.001     ; 21.282     ;
+; -20.237 ; proc_mips:mips1|datapath:dp|flopr:pcreg|q[4] ; proc_mips:mips1|datapath:dp|regfile:rf|mem~698  ; clk          ; clk         ; 1.000        ; -0.001     ; 21.272     ;
+; -20.237 ; proc_mips:mips1|datapath:dp|flopr:pcreg|q[4] ; proc_mips:mips1|datapath:dp|regfile:rf|mem~730  ; clk          ; clk         ; 1.000        ; -0.001     ; 21.272     ;
+; -20.236 ; proc_mips:mips1|datapath:dp|flopr:pcreg|q[5] ; proc_mips:mips1|datapath:dp|regfile:rf|mem~696  ; clk          ; clk         ; 1.000        ; 0.001      ; 21.273     ;
+; -20.236 ; proc_mips:mips1|datapath:dp|flopr:pcreg|q[5] ; proc_mips:mips1|datapath:dp|regfile:rf|mem~760  ; clk          ; clk         ; 1.000        ; 0.001      ; 21.273     ;
+; -20.235 ; proc_mips:mips1|datapath:dp|flopr:pcreg|q[4] ; proc_mips:mips1|datapath:dp|regfile:rf|mem~366  ; clk          ; clk         ; 1.000        ; -0.035     ; 21.236     ;
+; -20.234 ; proc_mips:mips1|datapath:dp|flopr:pcreg|q[3] ; proc_mips:mips1|datapath:dp|regfile:rf|mem~54   ; clk          ; clk         ; 1.000        ; 0.030      ; 21.300     ;
+; -20.233 ; proc_mips:mips1|datapath:dp|flopr:pcreg|q[3] ; proc_mips:mips1|datapath:dp|regfile:rf|mem~310  ; clk          ; clk         ; 1.000        ; 0.030      ; 21.299     ;
+; -20.232 ; proc_mips:mips1|datapath:dp|flopr:pcreg|q[4] ; proc_mips:mips1|datapath:dp|regfile:rf|mem~132  ; clk          ; clk         ; 1.000        ; -0.016     ; 21.252     ;
+; -20.229 ; proc_mips:mips1|datapath:dp|flopr:pcreg|q[5] ; proc_mips:mips1|datapath:dp|regfile:rf|mem~921  ; clk          ; clk         ; 1.000        ; 0.036      ; 21.301     ;
+; -20.227 ; proc_mips:mips1|datapath:dp|flopr:pcreg|q[5] ; proc_mips:mips1|datapath:dp|regfile:rf|mem~1014 ; clk          ; clk         ; 1.000        ; 0.007      ; 21.270     ;
+; -20.217 ; proc_mips:mips1|datapath:dp|flopr:pcreg|q[5] ; proc_mips:mips1|datapath:dp|regfile:rf|mem~698  ; clk          ; clk         ; 1.000        ; -0.001     ; 21.252     ;
+; -20.217 ; proc_mips:mips1|datapath:dp|flopr:pcreg|q[5] ; proc_mips:mips1|datapath:dp|regfile:rf|mem~730  ; clk          ; clk         ; 1.000        ; -0.001     ; 21.252     ;
+; -20.215 ; proc_mips:mips1|datapath:dp|flopr:pcreg|q[3] ; proc_mips:mips1|datapath:dp|regfile:rf|mem~216  ; clk          ; clk         ; 1.000        ; 0.004      ; 21.255     ;
+; -20.215 ; proc_mips:mips1|datapath:dp|flopr:pcreg|q[5] ; proc_mips:mips1|datapath:dp|regfile:rf|mem~366  ; clk          ; clk         ; 1.000        ; -0.035     ; 21.216     ;
+; -20.212 ; proc_mips:mips1|datapath:dp|flopr:pcreg|q[5] ; proc_mips:mips1|datapath:dp|regfile:rf|mem~132  ; clk          ; clk         ; 1.000        ; -0.016     ; 21.232     ;
+; -20.197 ; proc_mips:mips1|datapath:dp|flopr:pcreg|q[4] ; proc_mips:mips1|datapath:dp|regfile:rf|mem~640  ; clk          ; clk         ; 1.000        ; -0.021     ; 21.212     ;
+; -20.195 ; proc_mips:mips1|datapath:dp|flopr:pcreg|q[4] ; proc_mips:mips1|datapath:dp|regfile:rf|mem~608  ; clk          ; clk         ; 1.000        ; -0.021     ; 21.210     ;
+; -20.192 ; proc_mips:mips1|datapath:dp|flopr:pcreg|q[2] ; proc_mips:mips1|datapath:dp|regfile:rf|mem~574  ; clk          ; clk         ; 1.000        ; 0.032      ; 21.260     ;
+; -20.192 ; proc_mips:mips1|datapath:dp|flopr:pcreg|q[2] ; proc_mips:mips1|datapath:dp|regfile:rf|mem~702  ; clk          ; clk         ; 1.000        ; 0.032      ; 21.260     ;
+; -20.192 ; proc_mips:mips1|datapath:dp|flopr:pcreg|q[4] ; proc_mips:mips1|datapath:dp|regfile:rf|mem~1048 ; clk          ; clk         ; 1.000        ; -0.022     ; 21.206     ;
+; -20.182 ; proc_mips:mips1|datapath:dp|flopr:pcreg|q[2] ; proc_mips:mips1|datapath:dp|regfile:rf|mem~446  ; clk          ; clk         ; 1.000        ; -0.006     ; 21.212     ;
+; -20.181 ; proc_mips:mips1|datapath:dp|flopr:pcreg|q[4] ; proc_mips:mips1|datapath:dp|regfile:rf|mem~408  ; clk          ; clk         ; 1.000        ; 0.025      ; 21.242     ;
+; -20.180 ; proc_mips:mips1|datapath:dp|flopr:pcreg|q[2] ; proc_mips:mips1|datapath:dp|regfile:rf|mem~86   ; clk          ; clk         ; 1.000        ; 0.026      ; 21.242     ;
+; -20.178 ; proc_mips:mips1|datapath:dp|flopr:pcreg|q[2] ; proc_mips:mips1|datapath:dp|regfile:rf|mem~670  ; clk          ; clk         ; 1.000        ; -0.005     ; 21.209     ;
+; -20.177 ; proc_mips:mips1|datapath:dp|flopr:pcreg|q[2] ; proc_mips:mips1|datapath:dp|regfile:rf|mem~126  ; clk          ; clk         ; 1.000        ; -0.005     ; 21.208     ;
+; -20.177 ; proc_mips:mips1|datapath:dp|flopr:pcreg|q[2] ; proc_mips:mips1|datapath:dp|regfile:rf|mem~470  ; clk          ; clk         ; 1.000        ; 0.026      ; 21.239     ;
+; -20.177 ; proc_mips:mips1|datapath:dp|flopr:pcreg|q[5] ; proc_mips:mips1|datapath:dp|regfile:rf|mem~640  ; clk          ; clk         ; 1.000        ; -0.021     ; 21.192     ;
+; -20.175 ; proc_mips:mips1|datapath:dp|flopr:pcreg|q[5] ; proc_mips:mips1|datapath:dp|regfile:rf|mem~608  ; clk          ; clk         ; 1.000        ; -0.021     ; 21.190     ;
+; -20.173 ; proc_mips:mips1|datapath:dp|flopr:pcreg|q[4] ; proc_mips:mips1|datapath:dp|regfile:rf|mem~610  ; clk          ; clk         ; 1.000        ; 0.005      ; 21.214     ;
+; -20.172 ; proc_mips:mips1|datapath:dp|flopr:pcreg|q[5] ; proc_mips:mips1|datapath:dp|regfile:rf|mem~1048 ; clk          ; clk         ; 1.000        ; -0.022     ; 21.186     ;
+; -20.171 ; proc_mips:mips1|datapath:dp|flopr:pcreg|q[3] ; proc_mips:mips1|datapath:dp|regfile:rf|mem~574  ; clk          ; clk         ; 1.000        ; 0.032      ; 21.239     ;
+; -20.171 ; proc_mips:mips1|datapath:dp|flopr:pcreg|q[3] ; proc_mips:mips1|datapath:dp|regfile:rf|mem~702  ; clk          ; clk         ; 1.000        ; 0.032      ; 21.239     ;
+; -20.167 ; proc_mips:mips1|datapath:dp|flopr:pcreg|q[4] ; proc_mips:mips1|datapath:dp|regfile:rf|mem~406  ; clk          ; clk         ; 1.000        ; 0.001      ; 21.204     ;
+; -20.167 ; proc_mips:mips1|datapath:dp|flopr:pcreg|q[4] ; proc_mips:mips1|datapath:dp|regfile:rf|mem~455  ; clk          ; clk         ; 1.000        ; 0.001      ; 21.204     ;
+; -20.166 ; proc_mips:mips1|datapath:dp|flopr:pcreg|q[4] ; proc_mips:mips1|datapath:dp|regfile:rf|mem~391  ; clk          ; clk         ; 1.000        ; 0.001      ; 21.203     ;
+; -20.165 ; proc_mips:mips1|datapath:dp|flopr:pcreg|q[2] ; proc_mips:mips1|datapath:dp|regfile:rf|mem~478  ; clk          ; clk         ; 1.000        ; -0.006     ; 21.195     ;
+; -20.161 ; proc_mips:mips1|datapath:dp|flopr:pcreg|q[4] ; proc_mips:mips1|datapath:dp|regfile:rf|mem~758  ; clk          ; clk         ; 1.000        ; 0.022      ; 21.219     ;
+; -20.161 ; proc_mips:mips1|datapath:dp|flopr:pcreg|q[4] ; proc_mips:mips1|datapath:dp|regfile:rf|mem~694  ; clk          ; clk         ; 1.000        ; 0.022      ; 21.219     ;
+; -20.161 ; proc_mips:mips1|datapath:dp|flopr:pcreg|q[4] ; proc_mips:mips1|datapath:dp|regfile:rf|mem~574  ; clk          ; clk         ; 1.000        ; 0.032      ; 21.229     ;
+; -20.161 ; proc_mips:mips1|datapath:dp|flopr:pcreg|q[4] ; proc_mips:mips1|datapath:dp|regfile:rf|mem~702  ; clk          ; clk         ; 1.000        ; 0.032      ; 21.229     ;
+; -20.161 ; proc_mips:mips1|datapath:dp|flopr:pcreg|q[3] ; proc_mips:mips1|datapath:dp|regfile:rf|mem~446  ; clk          ; clk         ; 1.000        ; -0.006     ; 21.191     ;
+; -20.161 ; proc_mips:mips1|datapath:dp|flopr:pcreg|q[5] ; proc_mips:mips1|datapath:dp|regfile:rf|mem~408  ; clk          ; clk         ; 1.000        ; 0.025      ; 21.222     ;
+; -20.157 ; proc_mips:mips1|datapath:dp|flopr:pcreg|q[4] ; proc_mips:mips1|datapath:dp|regfile:rf|mem~514  ; clk          ; clk         ; 1.000        ; 0.031      ; 21.224     ;
+; -20.157 ; proc_mips:mips1|datapath:dp|flopr:pcreg|q[3] ; proc_mips:mips1|datapath:dp|regfile:rf|mem~670  ; clk          ; clk         ; 1.000        ; -0.005     ; 21.188     ;
+; -20.156 ; proc_mips:mips1|datapath:dp|flopr:pcreg|q[3] ; proc_mips:mips1|datapath:dp|regfile:rf|mem~126  ; clk          ; clk         ; 1.000        ; -0.005     ; 21.187     ;
+; -20.153 ; proc_mips:mips1|datapath:dp|flopr:pcreg|q[5] ; proc_mips:mips1|datapath:dp|regfile:rf|mem~610  ; clk          ; clk         ; 1.000        ; 0.005      ; 21.194     ;
+; -20.152 ; proc_mips:mips1|datapath:dp|flopr:pcreg|q[2] ; proc_mips:mips1|datapath:dp|regfile:rf|mem~806  ; clk          ; clk         ; 1.000        ; 0.022      ; 21.210     ;
+; -20.152 ; proc_mips:mips1|datapath:dp|flopr:pcreg|q[3] ; proc_mips:mips1|datapath:dp|regfile:rf|mem~86   ; clk          ; clk         ; 1.000        ; 0.026      ; 21.214     ;
+; -20.151 ; proc_mips:mips1|datapath:dp|flopr:pcreg|q[4] ; proc_mips:mips1|datapath:dp|regfile:rf|mem~918  ; clk          ; clk         ; 1.000        ; -0.014     ; 21.173     ;
+; -20.151 ; proc_mips:mips1|datapath:dp|flopr:pcreg|q[4] ; proc_mips:mips1|datapath:dp|regfile:rf|mem~446  ; clk          ; clk         ; 1.000        ; -0.006     ; 21.181     ;
+; -20.150 ; proc_mips:mips1|datapath:dp|flopr:pcreg|q[2] ; proc_mips:mips1|datapath:dp|regfile:rf|mem~902  ; clk          ; clk         ; 1.000        ; 0.022      ; 21.208     ;
+; -20.149 ; proc_mips:mips1|datapath:dp|flopr:pcreg|q[3] ; proc_mips:mips1|datapath:dp|regfile:rf|mem~470  ; clk          ; clk         ; 1.000        ; 0.026      ; 21.211     ;
+; -20.148 ; proc_mips:mips1|datapath:dp|flopr:pcreg|q[4] ; proc_mips:mips1|datapath:dp|regfile:rf|mem~263  ; clk          ; clk         ; 1.000        ; 0.005      ; 21.189     ;
+; -20.147 ; proc_mips:mips1|datapath:dp|flopr:pcreg|q[4] ; proc_mips:mips1|datapath:dp|regfile:rf|mem~135  ; clk          ; clk         ; 1.000        ; 0.005      ; 21.188     ;
+; -20.147 ; proc_mips:mips1|datapath:dp|flopr:pcreg|q[4] ; proc_mips:mips1|datapath:dp|regfile:rf|mem~670  ; clk          ; clk         ; 1.000        ; -0.005     ; 21.178     ;
+; -20.147 ; proc_mips:mips1|datapath:dp|flopr:pcreg|q[5] ; proc_mips:mips1|datapath:dp|regfile:rf|mem~406  ; clk          ; clk         ; 1.000        ; 0.001      ; 21.184     ;
+; -20.147 ; proc_mips:mips1|datapath:dp|flopr:pcreg|q[5] ; proc_mips:mips1|datapath:dp|regfile:rf|mem~455  ; clk          ; clk         ; 1.000        ; 0.001      ; 21.184     ;
+; -20.146 ; proc_mips:mips1|datapath:dp|flopr:pcreg|q[4] ; proc_mips:mips1|datapath:dp|regfile:rf|mem~126  ; clk          ; clk         ; 1.000        ; -0.005     ; 21.177     ;
+; -20.146 ; proc_mips:mips1|datapath:dp|flopr:pcreg|q[5] ; proc_mips:mips1|datapath:dp|regfile:rf|mem~391  ; clk          ; clk         ; 1.000        ; 0.001      ; 21.183     ;
+; -20.144 ; proc_mips:mips1|datapath:dp|flopr:pcreg|q[3] ; proc_mips:mips1|datapath:dp|regfile:rf|mem~478  ; clk          ; clk         ; 1.000        ; -0.006     ; 21.174     ;
+; -20.141 ; proc_mips:mips1|datapath:dp|flopr:pcreg|q[5] ; proc_mips:mips1|datapath:dp|regfile:rf|mem~758  ; clk          ; clk         ; 1.000        ; 0.022      ; 21.199     ;
+; -20.141 ; proc_mips:mips1|datapath:dp|flopr:pcreg|q[5] ; proc_mips:mips1|datapath:dp|regfile:rf|mem~694  ; clk          ; clk         ; 1.000        ; 0.022      ; 21.199     ;
+; -20.141 ; proc_mips:mips1|datapath:dp|flopr:pcreg|q[5] ; proc_mips:mips1|datapath:dp|regfile:rf|mem~574  ; clk          ; clk         ; 1.000        ; 0.032      ; 21.209     ;
++---------+----------------------------------------------+-------------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Hold: 'clk'                                                                                                  ;
++-------+---------------------+---------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node           ; To Node             ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+---------------------+---------------------+--------------+-------------+--------------+------------+------------+
+; 0.391 ; dmem:dmem1|mem~1193 ; dmem:dmem1|mem~1193 ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; dmem:dmem1|mem~1738 ; dmem:dmem1|mem~1738 ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; dmem:dmem1|mem~781  ; dmem:dmem1|mem~781  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; dmem:dmem1|mem~909  ; dmem:dmem1|mem~909  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; dmem:dmem1|mem~653  ; dmem:dmem1|mem~653  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; dmem:dmem1|mem~1037 ; dmem:dmem1|mem~1037 ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; dmem:dmem1|mem~621  ; dmem:dmem1|mem~621  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; dmem:dmem1|mem~749  ; dmem:dmem1|mem~749  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; dmem:dmem1|mem~877  ; dmem:dmem1|mem~877  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; dmem:dmem1|mem~1005 ; dmem:dmem1|mem~1005 ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; dmem:dmem1|mem~685  ; dmem:dmem1|mem~685  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; dmem:dmem1|mem~557  ; dmem:dmem1|mem~557  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; dmem:dmem1|mem~813  ; dmem:dmem1|mem~813  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; dmem:dmem1|mem~941  ; dmem:dmem1|mem~941  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; dmem:dmem1|mem~973  ; dmem:dmem1|mem~973  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; dmem:dmem1|mem~717  ; dmem:dmem1|mem~717  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; dmem:dmem1|mem~845  ; dmem:dmem1|mem~845  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; dmem:dmem1|mem~589  ; dmem:dmem1|mem~589  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; dmem:dmem1|mem~205  ; dmem:dmem1|mem~205  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; dmem:dmem1|mem~173  ; dmem:dmem1|mem~173  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; dmem:dmem1|mem~269  ; dmem:dmem1|mem~269  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; dmem:dmem1|mem~237  ; dmem:dmem1|mem~237  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; dmem:dmem1|mem~493  ; dmem:dmem1|mem~493  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; dmem:dmem1|mem~525  ; dmem:dmem1|mem~525  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; dmem:dmem1|mem~461  ; dmem:dmem1|mem~461  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; dmem:dmem1|mem~429  ; dmem:dmem1|mem~429  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; dmem:dmem1|mem~45   ; dmem:dmem1|mem~45   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; dmem:dmem1|mem~109  ; dmem:dmem1|mem~109  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; dmem:dmem1|mem~77   ; dmem:dmem1|mem~77   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; dmem:dmem1|mem~141  ; dmem:dmem1|mem~141  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; dmem:dmem1|mem~397  ; dmem:dmem1|mem~397  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; dmem:dmem1|mem~333  ; dmem:dmem1|mem~333  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; dmem:dmem1|mem~365  ; dmem:dmem1|mem~365  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; dmem:dmem1|mem~301  ; dmem:dmem1|mem~301  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; dmem:dmem1|mem~1901 ; dmem:dmem1|mem~1901 ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; dmem:dmem1|mem~1645 ; dmem:dmem1|mem~1645 ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; dmem:dmem1|mem~2029 ; dmem:dmem1|mem~2029 ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; dmem:dmem1|mem~1805 ; dmem:dmem1|mem~1805 ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; dmem:dmem1|mem~1677 ; dmem:dmem1|mem~1677 ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; dmem:dmem1|mem~2061 ; dmem:dmem1|mem~2061 ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; dmem:dmem1|mem~1933 ; dmem:dmem1|mem~1933 ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; dmem:dmem1|mem~1581 ; dmem:dmem1|mem~1581 ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; dmem:dmem1|mem~1837 ; dmem:dmem1|mem~1837 ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; dmem:dmem1|mem~1709 ; dmem:dmem1|mem~1709 ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; dmem:dmem1|mem~1965 ; dmem:dmem1|mem~1965 ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; dmem:dmem1|mem~1869 ; dmem:dmem1|mem~1869 ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; dmem:dmem1|mem~1613 ; dmem:dmem1|mem~1613 ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; dmem:dmem1|mem~1741 ; dmem:dmem1|mem~1741 ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; dmem:dmem1|mem~1997 ; dmem:dmem1|mem~1997 ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; dmem:dmem1|mem~1389 ; dmem:dmem1|mem~1389 ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; dmem:dmem1|mem~1421 ; dmem:dmem1|mem~1421 ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; dmem:dmem1|mem~1325 ; dmem:dmem1|mem~1325 ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; dmem:dmem1|mem~1357 ; dmem:dmem1|mem~1357 ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; dmem:dmem1|mem~1453 ; dmem:dmem1|mem~1453 ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; dmem:dmem1|mem~1549 ; dmem:dmem1|mem~1549 ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; dmem:dmem1|mem~1485 ; dmem:dmem1|mem~1485 ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; dmem:dmem1|mem~1293 ; dmem:dmem1|mem~1293 ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; dmem:dmem1|mem~1197 ; dmem:dmem1|mem~1197 ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; dmem:dmem1|mem~1261 ; dmem:dmem1|mem~1261 ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; dmem:dmem1|mem~1229 ; dmem:dmem1|mem~1229 ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; dmem:dmem1|mem~1133 ; dmem:dmem1|mem~1133 ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; dmem:dmem1|mem~1101 ; dmem:dmem1|mem~1101 ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; dmem:dmem1|mem~1327 ; dmem:dmem1|mem~1327 ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; dmem:dmem1|mem~1359 ; dmem:dmem1|mem~1359 ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; dmem:dmem1|mem~1391 ; dmem:dmem1|mem~1391 ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; dmem:dmem1|mem~1423 ; dmem:dmem1|mem~1423 ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; dmem:dmem1|mem~1263 ; dmem:dmem1|mem~1263 ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; dmem:dmem1|mem~1199 ; dmem:dmem1|mem~1199 ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; dmem:dmem1|mem~1231 ; dmem:dmem1|mem~1231 ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; dmem:dmem1|mem~1295 ; dmem:dmem1|mem~1295 ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; dmem:dmem1|mem~1103 ; dmem:dmem1|mem~1103 ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; dmem:dmem1|mem~1071 ; dmem:dmem1|mem~1071 ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; dmem:dmem1|mem~1167 ; dmem:dmem1|mem~1167 ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; dmem:dmem1|mem~1135 ; dmem:dmem1|mem~1135 ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; dmem:dmem1|mem~1487 ; dmem:dmem1|mem~1487 ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; dmem:dmem1|mem~1455 ; dmem:dmem1|mem~1455 ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; dmem:dmem1|mem~1519 ; dmem:dmem1|mem~1519 ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; dmem:dmem1|mem~1551 ; dmem:dmem1|mem~1551 ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; dmem:dmem1|mem~847  ; dmem:dmem1|mem~847  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; dmem:dmem1|mem~591  ; dmem:dmem1|mem~591  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; dmem:dmem1|mem~975  ; dmem:dmem1|mem~975  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; dmem:dmem1|mem~719  ; dmem:dmem1|mem~719  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; dmem:dmem1|mem~911  ; dmem:dmem1|mem~911  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; dmem:dmem1|mem~655  ; dmem:dmem1|mem~655  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; dmem:dmem1|mem~1039 ; dmem:dmem1|mem~1039 ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; dmem:dmem1|mem~783  ; dmem:dmem1|mem~783  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; dmem:dmem1|mem~943  ; dmem:dmem1|mem~943  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; dmem:dmem1|mem~687  ; dmem:dmem1|mem~687  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; dmem:dmem1|mem~559  ; dmem:dmem1|mem~559  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; dmem:dmem1|mem~815  ; dmem:dmem1|mem~815  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; dmem:dmem1|mem~879  ; dmem:dmem1|mem~879  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; dmem:dmem1|mem~623  ; dmem:dmem1|mem~623  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; dmem:dmem1|mem~751  ; dmem:dmem1|mem~751  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; dmem:dmem1|mem~1007 ; dmem:dmem1|mem~1007 ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; dmem:dmem1|mem~431  ; dmem:dmem1|mem~431  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; dmem:dmem1|mem~463  ; dmem:dmem1|mem~463  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; dmem:dmem1|mem~495  ; dmem:dmem1|mem~495  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; dmem:dmem1|mem~527  ; dmem:dmem1|mem~527  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; dmem:dmem1|mem~175  ; dmem:dmem1|mem~175  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; dmem:dmem1|mem~207  ; dmem:dmem1|mem~207  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
++-------+---------------------+---------------------+--------------+-------------+--------------+------------+------------+
+
+
++------------------------------------------------------------------------------------------------------+
+; Slow Model Minimum Pulse Width: 'clk'                                                                ;
++--------+--------------+----------------+------------------+-------+------------+---------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock ; Clock Edge ; Target              ;
++--------+--------------+----------------+------------------+-------+------------+---------------------+
+; -1.380 ; 1.000        ; 2.380          ; Port Rate        ; clk   ; Rise       ; clk                 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; dmem:dmem1|mem~100  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; dmem:dmem1|mem~100  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; dmem:dmem1|mem~1000 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; dmem:dmem1|mem~1000 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; dmem:dmem1|mem~1001 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; dmem:dmem1|mem~1001 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; dmem:dmem1|mem~1002 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; dmem:dmem1|mem~1002 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; dmem:dmem1|mem~1003 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; dmem:dmem1|mem~1003 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; dmem:dmem1|mem~1004 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; dmem:dmem1|mem~1004 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; dmem:dmem1|mem~1005 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; dmem:dmem1|mem~1005 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; dmem:dmem1|mem~1006 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; dmem:dmem1|mem~1006 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; dmem:dmem1|mem~1007 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; dmem:dmem1|mem~1007 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; dmem:dmem1|mem~1008 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; dmem:dmem1|mem~1008 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; dmem:dmem1|mem~1009 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; dmem:dmem1|mem~1009 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; dmem:dmem1|mem~101  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; dmem:dmem1|mem~101  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; dmem:dmem1|mem~1010 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; dmem:dmem1|mem~1010 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; dmem:dmem1|mem~1011 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; dmem:dmem1|mem~1011 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; dmem:dmem1|mem~1012 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; dmem:dmem1|mem~1012 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; dmem:dmem1|mem~1013 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; dmem:dmem1|mem~1013 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; dmem:dmem1|mem~1014 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; dmem:dmem1|mem~1014 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; dmem:dmem1|mem~1015 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; dmem:dmem1|mem~1015 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; dmem:dmem1|mem~1016 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; dmem:dmem1|mem~1016 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; dmem:dmem1|mem~1017 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; dmem:dmem1|mem~1017 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; dmem:dmem1|mem~1018 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; dmem:dmem1|mem~1018 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; dmem:dmem1|mem~1019 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; dmem:dmem1|mem~1019 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; dmem:dmem1|mem~102  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; dmem:dmem1|mem~102  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; dmem:dmem1|mem~1020 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; dmem:dmem1|mem~1020 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; dmem:dmem1|mem~1021 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; dmem:dmem1|mem~1021 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; dmem:dmem1|mem~1022 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; dmem:dmem1|mem~1022 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; dmem:dmem1|mem~1023 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; dmem:dmem1|mem~1023 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; dmem:dmem1|mem~1024 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; dmem:dmem1|mem~1024 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; dmem:dmem1|mem~1025 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; dmem:dmem1|mem~1025 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; dmem:dmem1|mem~1026 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; dmem:dmem1|mem~1026 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; dmem:dmem1|mem~1027 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; dmem:dmem1|mem~1027 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; dmem:dmem1|mem~1028 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; dmem:dmem1|mem~1028 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; dmem:dmem1|mem~1029 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; dmem:dmem1|mem~1029 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; dmem:dmem1|mem~103  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; dmem:dmem1|mem~103  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; dmem:dmem1|mem~1030 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; dmem:dmem1|mem~1030 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; dmem:dmem1|mem~1031 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; dmem:dmem1|mem~1031 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; dmem:dmem1|mem~1032 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; dmem:dmem1|mem~1032 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; dmem:dmem1|mem~1033 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; dmem:dmem1|mem~1033 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; dmem:dmem1|mem~1034 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; dmem:dmem1|mem~1034 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; dmem:dmem1|mem~1035 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; dmem:dmem1|mem~1035 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; dmem:dmem1|mem~1036 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; dmem:dmem1|mem~1036 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; dmem:dmem1|mem~1037 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; dmem:dmem1|mem~1037 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; dmem:dmem1|mem~1038 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; dmem:dmem1|mem~1038 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; dmem:dmem1|mem~1039 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; dmem:dmem1|mem~1039 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; dmem:dmem1|mem~104  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; dmem:dmem1|mem~104  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; dmem:dmem1|mem~1040 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; dmem:dmem1|mem~1040 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; dmem:dmem1|mem~1041 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; dmem:dmem1|mem~1041 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; dmem:dmem1|mem~1042 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; dmem:dmem1|mem~1042 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; dmem:dmem1|mem~1043 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; dmem:dmem1|mem~1043 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; dmem:dmem1|mem~1044 ;
++--------+--------------+----------------+------------------+-------+------------+---------------------+
+
+
++------------------------------------------------------------------------------+
+; Clock to Output Times                                                        ;
++----------------+------------+--------+--------+------------+-----------------+
+; Data Port      ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++----------------+------------+--------+--------+------------+-----------------+
+; dataadr[*]     ; clk        ; 25.198 ; 25.198 ; Rise       ; clk             ;
+;  dataadr[0]    ; clk        ; 21.253 ; 21.253 ; Rise       ; clk             ;
+;  dataadr[1]    ; clk        ; 21.427 ; 21.427 ; Rise       ; clk             ;
+;  dataadr[2]    ; clk        ; 19.759 ; 19.759 ; Rise       ; clk             ;
+;  dataadr[3]    ; clk        ; 19.693 ; 19.693 ; Rise       ; clk             ;
+;  dataadr[4]    ; clk        ; 20.490 ; 20.490 ; Rise       ; clk             ;
+;  dataadr[5]    ; clk        ; 19.978 ; 19.978 ; Rise       ; clk             ;
+;  dataadr[6]    ; clk        ; 21.288 ; 21.288 ; Rise       ; clk             ;
+;  dataadr[7]    ; clk        ; 19.645 ; 19.645 ; Rise       ; clk             ;
+;  dataadr[8]    ; clk        ; 22.382 ; 22.382 ; Rise       ; clk             ;
+;  dataadr[9]    ; clk        ; 21.985 ; 21.985 ; Rise       ; clk             ;
+;  dataadr[10]   ; clk        ; 21.789 ; 21.789 ; Rise       ; clk             ;
+;  dataadr[11]   ; clk        ; 23.072 ; 23.072 ; Rise       ; clk             ;
+;  dataadr[12]   ; clk        ; 22.412 ; 22.412 ; Rise       ; clk             ;
+;  dataadr[13]   ; clk        ; 23.005 ; 23.005 ; Rise       ; clk             ;
+;  dataadr[14]   ; clk        ; 21.956 ; 21.956 ; Rise       ; clk             ;
+;  dataadr[15]   ; clk        ; 23.937 ; 23.937 ; Rise       ; clk             ;
+;  dataadr[16]   ; clk        ; 22.653 ; 22.653 ; Rise       ; clk             ;
+;  dataadr[17]   ; clk        ; 22.388 ; 22.388 ; Rise       ; clk             ;
+;  dataadr[18]   ; clk        ; 21.741 ; 21.741 ; Rise       ; clk             ;
+;  dataadr[19]   ; clk        ; 22.460 ; 22.460 ; Rise       ; clk             ;
+;  dataadr[20]   ; clk        ; 25.135 ; 25.135 ; Rise       ; clk             ;
+;  dataadr[21]   ; clk        ; 24.939 ; 24.939 ; Rise       ; clk             ;
+;  dataadr[22]   ; clk        ; 22.712 ; 22.712 ; Rise       ; clk             ;
+;  dataadr[23]   ; clk        ; 23.213 ; 23.213 ; Rise       ; clk             ;
+;  dataadr[24]   ; clk        ; 22.380 ; 22.380 ; Rise       ; clk             ;
+;  dataadr[25]   ; clk        ; 23.143 ; 23.143 ; Rise       ; clk             ;
+;  dataadr[26]   ; clk        ; 22.540 ; 22.540 ; Rise       ; clk             ;
+;  dataadr[27]   ; clk        ; 25.198 ; 25.198 ; Rise       ; clk             ;
+;  dataadr[28]   ; clk        ; 22.941 ; 22.941 ; Rise       ; clk             ;
+;  dataadr[29]   ; clk        ; 23.155 ; 23.155 ; Rise       ; clk             ;
+;  dataadr[30]   ; clk        ; 22.543 ; 22.543 ; Rise       ; clk             ;
+;  dataadr[31]   ; clk        ; 23.635 ; 23.635 ; Rise       ; clk             ;
+; memwrite       ; clk        ; 11.812 ; 11.812 ; Rise       ; clk             ;
+; writedata[*]   ; clk        ; 19.075 ; 19.075 ; Rise       ; clk             ;
+;  writedata[0]  ; clk        ; 14.971 ; 14.971 ; Rise       ; clk             ;
+;  writedata[1]  ; clk        ; 15.799 ; 15.799 ; Rise       ; clk             ;
+;  writedata[2]  ; clk        ; 15.110 ; 15.110 ; Rise       ; clk             ;
+;  writedata[3]  ; clk        ; 16.056 ; 16.056 ; Rise       ; clk             ;
+;  writedata[4]  ; clk        ; 14.823 ; 14.823 ; Rise       ; clk             ;
+;  writedata[5]  ; clk        ; 15.548 ; 15.548 ; Rise       ; clk             ;
+;  writedata[6]  ; clk        ; 15.027 ; 15.027 ; Rise       ; clk             ;
+;  writedata[7]  ; clk        ; 15.048 ; 15.048 ; Rise       ; clk             ;
+;  writedata[8]  ; clk        ; 14.863 ; 14.863 ; Rise       ; clk             ;
+;  writedata[9]  ; clk        ; 16.227 ; 16.227 ; Rise       ; clk             ;
+;  writedata[10] ; clk        ; 16.334 ; 16.334 ; Rise       ; clk             ;
+;  writedata[11] ; clk        ; 15.068 ; 15.068 ; Rise       ; clk             ;
+;  writedata[12] ; clk        ; 17.025 ; 17.025 ; Rise       ; clk             ;
+;  writedata[13] ; clk        ; 16.151 ; 16.151 ; Rise       ; clk             ;
+;  writedata[14] ; clk        ; 15.416 ; 15.416 ; Rise       ; clk             ;
+;  writedata[15] ; clk        ; 15.062 ; 15.062 ; Rise       ; clk             ;
+;  writedata[16] ; clk        ; 15.959 ; 15.959 ; Rise       ; clk             ;
+;  writedata[17] ; clk        ; 17.180 ; 17.180 ; Rise       ; clk             ;
+;  writedata[18] ; clk        ; 16.561 ; 16.561 ; Rise       ; clk             ;
+;  writedata[19] ; clk        ; 15.760 ; 15.760 ; Rise       ; clk             ;
+;  writedata[20] ; clk        ; 16.335 ; 16.335 ; Rise       ; clk             ;
+;  writedata[21] ; clk        ; 16.403 ; 16.403 ; Rise       ; clk             ;
+;  writedata[22] ; clk        ; 16.316 ; 16.316 ; Rise       ; clk             ;
+;  writedata[23] ; clk        ; 16.628 ; 16.628 ; Rise       ; clk             ;
+;  writedata[24] ; clk        ; 16.213 ; 16.213 ; Rise       ; clk             ;
+;  writedata[25] ; clk        ; 16.843 ; 16.843 ; Rise       ; clk             ;
+;  writedata[26] ; clk        ; 17.034 ; 17.034 ; Rise       ; clk             ;
+;  writedata[27] ; clk        ; 17.267 ; 17.267 ; Rise       ; clk             ;
+;  writedata[28] ; clk        ; 14.896 ; 14.896 ; Rise       ; clk             ;
+;  writedata[29] ; clk        ; 19.075 ; 19.075 ; Rise       ; clk             ;
+;  writedata[30] ; clk        ; 16.514 ; 16.514 ; Rise       ; clk             ;
+;  writedata[31] ; clk        ; 18.191 ; 18.191 ; Rise       ; clk             ;
++----------------+------------+--------+--------+------------+-----------------+
+
+
++------------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                                ;
++----------------+------------+--------+--------+------------+-----------------+
+; Data Port      ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++----------------+------------+--------+--------+------------+-----------------+
+; dataadr[*]     ; clk        ; 10.743 ; 10.743 ; Rise       ; clk             ;
+;  dataadr[0]    ; clk        ; 11.731 ; 11.731 ; Rise       ; clk             ;
+;  dataadr[1]    ; clk        ; 13.797 ; 13.797 ; Rise       ; clk             ;
+;  dataadr[2]    ; clk        ; 11.077 ; 11.077 ; Rise       ; clk             ;
+;  dataadr[3]    ; clk        ; 11.832 ; 11.832 ; Rise       ; clk             ;
+;  dataadr[4]    ; clk        ; 12.102 ; 12.102 ; Rise       ; clk             ;
+;  dataadr[5]    ; clk        ; 11.678 ; 11.678 ; Rise       ; clk             ;
+;  dataadr[6]    ; clk        ; 13.323 ; 13.323 ; Rise       ; clk             ;
+;  dataadr[7]    ; clk        ; 12.456 ; 12.456 ; Rise       ; clk             ;
+;  dataadr[8]    ; clk        ; 12.133 ; 12.133 ; Rise       ; clk             ;
+;  dataadr[9]    ; clk        ; 12.145 ; 12.145 ; Rise       ; clk             ;
+;  dataadr[10]   ; clk        ; 12.268 ; 12.268 ; Rise       ; clk             ;
+;  dataadr[11]   ; clk        ; 13.169 ; 13.169 ; Rise       ; clk             ;
+;  dataadr[12]   ; clk        ; 13.385 ; 13.385 ; Rise       ; clk             ;
+;  dataadr[13]   ; clk        ; 12.873 ; 12.873 ; Rise       ; clk             ;
+;  dataadr[14]   ; clk        ; 12.522 ; 12.522 ; Rise       ; clk             ;
+;  dataadr[15]   ; clk        ; 13.203 ; 13.203 ; Rise       ; clk             ;
+;  dataadr[16]   ; clk        ; 13.529 ; 13.529 ; Rise       ; clk             ;
+;  dataadr[17]   ; clk        ; 12.797 ; 12.797 ; Rise       ; clk             ;
+;  dataadr[18]   ; clk        ; 11.493 ; 11.493 ; Rise       ; clk             ;
+;  dataadr[19]   ; clk        ; 12.376 ; 12.376 ; Rise       ; clk             ;
+;  dataadr[20]   ; clk        ; 12.576 ; 12.576 ; Rise       ; clk             ;
+;  dataadr[21]   ; clk        ; 13.316 ; 13.316 ; Rise       ; clk             ;
+;  dataadr[22]   ; clk        ; 12.133 ; 12.133 ; Rise       ; clk             ;
+;  dataadr[23]   ; clk        ; 12.500 ; 12.500 ; Rise       ; clk             ;
+;  dataadr[24]   ; clk        ; 11.437 ; 11.437 ; Rise       ; clk             ;
+;  dataadr[25]   ; clk        ; 11.638 ; 11.638 ; Rise       ; clk             ;
+;  dataadr[26]   ; clk        ; 10.743 ; 10.743 ; Rise       ; clk             ;
+;  dataadr[27]   ; clk        ; 13.218 ; 13.218 ; Rise       ; clk             ;
+;  dataadr[28]   ; clk        ; 10.792 ; 10.792 ; Rise       ; clk             ;
+;  dataadr[29]   ; clk        ; 13.143 ; 13.143 ; Rise       ; clk             ;
+;  dataadr[30]   ; clk        ; 12.383 ; 12.383 ; Rise       ; clk             ;
+;  dataadr[31]   ; clk        ; 13.436 ; 13.436 ; Rise       ; clk             ;
+; memwrite       ; clk        ; 10.327 ; 10.327 ; Rise       ; clk             ;
+; writedata[*]   ; clk        ; 9.411  ; 9.411  ; Rise       ; clk             ;
+;  writedata[0]  ; clk        ; 9.747  ; 9.747  ; Rise       ; clk             ;
+;  writedata[1]  ; clk        ; 10.762 ; 10.762 ; Rise       ; clk             ;
+;  writedata[2]  ; clk        ; 10.570 ; 10.570 ; Rise       ; clk             ;
+;  writedata[3]  ; clk        ; 12.353 ; 12.353 ; Rise       ; clk             ;
+;  writedata[4]  ; clk        ; 10.411 ; 10.411 ; Rise       ; clk             ;
+;  writedata[5]  ; clk        ; 11.088 ; 11.088 ; Rise       ; clk             ;
+;  writedata[6]  ; clk        ; 10.170 ; 10.170 ; Rise       ; clk             ;
+;  writedata[7]  ; clk        ; 10.658 ; 10.658 ; Rise       ; clk             ;
+;  writedata[8]  ; clk        ; 9.411  ; 9.411  ; Rise       ; clk             ;
+;  writedata[9]  ; clk        ; 11.339 ; 11.339 ; Rise       ; clk             ;
+;  writedata[10] ; clk        ; 11.200 ; 11.200 ; Rise       ; clk             ;
+;  writedata[11] ; clk        ; 10.435 ; 10.435 ; Rise       ; clk             ;
+;  writedata[12] ; clk        ; 11.143 ; 11.143 ; Rise       ; clk             ;
+;  writedata[13] ; clk        ; 11.017 ; 11.017 ; Rise       ; clk             ;
+;  writedata[14] ; clk        ; 10.405 ; 10.405 ; Rise       ; clk             ;
+;  writedata[15] ; clk        ; 10.248 ; 10.248 ; Rise       ; clk             ;
+;  writedata[16] ; clk        ; 11.157 ; 11.157 ; Rise       ; clk             ;
+;  writedata[17] ; clk        ; 10.956 ; 10.956 ; Rise       ; clk             ;
+;  writedata[18] ; clk        ; 11.498 ; 11.498 ; Rise       ; clk             ;
+;  writedata[19] ; clk        ; 10.594 ; 10.594 ; Rise       ; clk             ;
+;  writedata[20] ; clk        ; 10.991 ; 10.991 ; Rise       ; clk             ;
+;  writedata[21] ; clk        ; 10.985 ; 10.985 ; Rise       ; clk             ;
+;  writedata[22] ; clk        ; 10.808 ; 10.808 ; Rise       ; clk             ;
+;  writedata[23] ; clk        ; 10.875 ; 10.875 ; Rise       ; clk             ;
+;  writedata[24] ; clk        ; 10.195 ; 10.195 ; Rise       ; clk             ;
+;  writedata[25] ; clk        ; 11.434 ; 11.434 ; Rise       ; clk             ;
+;  writedata[26] ; clk        ; 10.211 ; 10.211 ; Rise       ; clk             ;
+;  writedata[27] ; clk        ; 11.026 ; 11.026 ; Rise       ; clk             ;
+;  writedata[28] ; clk        ; 9.601  ; 9.601  ; Rise       ; clk             ;
+;  writedata[29] ; clk        ; 12.749 ; 12.749 ; Rise       ; clk             ;
+;  writedata[30] ; clk        ; 11.338 ; 11.338 ; Rise       ; clk             ;
+;  writedata[31] ; clk        ; 12.025 ; 12.025 ; Rise       ; clk             ;
++----------------+------------+--------+--------+------------+-----------------+
+
+
++--------------------------------+
+; Fast Model Setup Summary       ;
++-------+--------+---------------+
+; Clock ; Slack  ; End Point TNS ;
++-------+--------+---------------+
+; clk   ; -8.620 ; -19542.974    ;
++-------+--------+---------------+
+
+
++-------------------------------+
+; Fast Model Hold Summary       ;
++-------+-------+---------------+
+; Clock ; Slack ; End Point TNS ;
++-------+-------+---------------+
+; clk   ; 0.215 ; 0.000         ;
++-------+-------+---------------+
+
+
+-------------------------------
+; Fast Model Recovery Summary ;
+-------------------------------
+No paths to report.
+
+
+------------------------------
+; Fast Model Removal Summary ;
+------------------------------
+No paths to report.
+
+
++----------------------------------------+
+; Fast Model Minimum Pulse Width Summary ;
++-------+--------+-----------------------+
+; Clock ; Slack  ; End Point TNS         ;
++-------+--------+-----------------------+
+; clk   ; -1.380 ; -3079.380             ;
++-------+--------+-----------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Setup: 'clk'                                                                                                                                                       ;
++--------+----------------------------------------------+-------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                                    ; To Node                                         ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+----------------------------------------------+-------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; -8.620 ; proc_mips:mips1|datapath:dp|flopr:pcreg|q[4] ; proc_mips:mips1|datapath:dp|regfile:rf|mem~54   ; clk          ; clk         ; 1.000        ; 0.032      ; 9.684      ;
+; -8.618 ; proc_mips:mips1|datapath:dp|flopr:pcreg|q[4] ; proc_mips:mips1|datapath:dp|regfile:rf|mem~310  ; clk          ; clk         ; 1.000        ; 0.032      ; 9.682      ;
+; -8.606 ; proc_mips:mips1|datapath:dp|flopr:pcreg|q[5] ; proc_mips:mips1|datapath:dp|regfile:rf|mem~54   ; clk          ; clk         ; 1.000        ; 0.032      ; 9.670      ;
+; -8.604 ; proc_mips:mips1|datapath:dp|flopr:pcreg|q[5] ; proc_mips:mips1|datapath:dp|regfile:rf|mem~310  ; clk          ; clk         ; 1.000        ; 0.032      ; 9.668      ;
+; -8.557 ; proc_mips:mips1|datapath:dp|flopr:pcreg|q[4] ; proc_mips:mips1|datapath:dp|regfile:rf|mem~88   ; clk          ; clk         ; 1.000        ; 0.003      ; 9.592      ;
+; -8.552 ; proc_mips:mips1|datapath:dp|flopr:pcreg|q[4] ; proc_mips:mips1|datapath:dp|regfile:rf|mem~86   ; clk          ; clk         ; 1.000        ; 0.028      ; 9.612      ;
+; -8.552 ; proc_mips:mips1|datapath:dp|flopr:pcreg|q[3] ; proc_mips:mips1|datapath:dp|regfile:rf|mem~54   ; clk          ; clk         ; 1.000        ; 0.032      ; 9.616      ;
+; -8.550 ; proc_mips:mips1|datapath:dp|flopr:pcreg|q[3] ; proc_mips:mips1|datapath:dp|regfile:rf|mem~310  ; clk          ; clk         ; 1.000        ; 0.032      ; 9.614      ;
+; -8.549 ; proc_mips:mips1|datapath:dp|flopr:pcreg|q[4] ; proc_mips:mips1|datapath:dp|regfile:rf|mem~470  ; clk          ; clk         ; 1.000        ; 0.028      ; 9.609      ;
+; -8.543 ; proc_mips:mips1|datapath:dp|flopr:pcreg|q[5] ; proc_mips:mips1|datapath:dp|regfile:rf|mem~88   ; clk          ; clk         ; 1.000        ; 0.003      ; 9.578      ;
+; -8.539 ; proc_mips:mips1|datapath:dp|flopr:pcreg|q[2] ; proc_mips:mips1|datapath:dp|regfile:rf|mem~54   ; clk          ; clk         ; 1.000        ; 0.032      ; 9.603      ;
+; -8.538 ; proc_mips:mips1|datapath:dp|flopr:pcreg|q[5] ; proc_mips:mips1|datapath:dp|regfile:rf|mem~86   ; clk          ; clk         ; 1.000        ; 0.028      ; 9.598      ;
+; -8.537 ; proc_mips:mips1|datapath:dp|flopr:pcreg|q[2] ; proc_mips:mips1|datapath:dp|regfile:rf|mem~310  ; clk          ; clk         ; 1.000        ; 0.032      ; 9.601      ;
+; -8.535 ; proc_mips:mips1|datapath:dp|flopr:pcreg|q[5] ; proc_mips:mips1|datapath:dp|regfile:rf|mem~470  ; clk          ; clk         ; 1.000        ; 0.028      ; 9.595      ;
+; -8.515 ; proc_mips:mips1|datapath:dp|flopr:pcreg|q[3] ; proc_mips:mips1|datapath:dp|regfile:rf|mem~734  ; clk          ; clk         ; 1.000        ; -0.003     ; 9.544      ;
+; -8.515 ; proc_mips:mips1|datapath:dp|flopr:pcreg|q[4] ; proc_mips:mips1|datapath:dp|regfile:rf|mem~406  ; clk          ; clk         ; 1.000        ; 0.000      ; 9.547      ;
+; -8.511 ; proc_mips:mips1|datapath:dp|flopr:pcreg|q[4] ; proc_mips:mips1|datapath:dp|regfile:rf|mem~1014 ; clk          ; clk         ; 1.000        ; 0.010      ; 9.553      ;
+; -8.510 ; proc_mips:mips1|datapath:dp|flopr:pcreg|q[3] ; proc_mips:mips1|datapath:dp|regfile:rf|mem~766  ; clk          ; clk         ; 1.000        ; -0.003     ; 9.539      ;
+; -8.510 ; proc_mips:mips1|datapath:dp|flopr:pcreg|q[4] ; proc_mips:mips1|datapath:dp|regfile:rf|mem~918  ; clk          ; clk         ; 1.000        ; -0.011     ; 9.531      ;
+; -8.504 ; proc_mips:mips1|datapath:dp|flopr:pcreg|q[4] ; proc_mips:mips1|datapath:dp|regfile:rf|mem~758  ; clk          ; clk         ; 1.000        ; 0.023      ; 9.559      ;
+; -8.504 ; proc_mips:mips1|datapath:dp|flopr:pcreg|q[4] ; proc_mips:mips1|datapath:dp|regfile:rf|mem~694  ; clk          ; clk         ; 1.000        ; 0.023      ; 9.559      ;
+; -8.501 ; proc_mips:mips1|datapath:dp|flopr:pcreg|q[5] ; proc_mips:mips1|datapath:dp|regfile:rf|mem~406  ; clk          ; clk         ; 1.000        ; 0.000      ; 9.533      ;
+; -8.498 ; proc_mips:mips1|datapath:dp|flopr:pcreg|q[2] ; proc_mips:mips1|datapath:dp|regfile:rf|mem~88   ; clk          ; clk         ; 1.000        ; 0.003      ; 9.533      ;
+; -8.497 ; proc_mips:mips1|datapath:dp|flopr:pcreg|q[5] ; proc_mips:mips1|datapath:dp|regfile:rf|mem~1014 ; clk          ; clk         ; 1.000        ; 0.010      ; 9.539      ;
+; -8.496 ; proc_mips:mips1|datapath:dp|flopr:pcreg|q[4] ; proc_mips:mips1|datapath:dp|regfile:rf|mem~950  ; clk          ; clk         ; 1.000        ; -0.007     ; 9.521      ;
+; -8.496 ; proc_mips:mips1|datapath:dp|flopr:pcreg|q[2] ; proc_mips:mips1|datapath:dp|regfile:rf|mem~734  ; clk          ; clk         ; 1.000        ; -0.003     ; 9.525      ;
+; -8.496 ; proc_mips:mips1|datapath:dp|flopr:pcreg|q[5] ; proc_mips:mips1|datapath:dp|regfile:rf|mem~918  ; clk          ; clk         ; 1.000        ; -0.011     ; 9.517      ;
+; -8.491 ; proc_mips:mips1|datapath:dp|flopr:pcreg|q[2] ; proc_mips:mips1|datapath:dp|regfile:rf|mem~766  ; clk          ; clk         ; 1.000        ; -0.003     ; 9.520      ;
+; -8.490 ; proc_mips:mips1|datapath:dp|flopr:pcreg|q[5] ; proc_mips:mips1|datapath:dp|regfile:rf|mem~758  ; clk          ; clk         ; 1.000        ; 0.023      ; 9.545      ;
+; -8.490 ; proc_mips:mips1|datapath:dp|flopr:pcreg|q[5] ; proc_mips:mips1|datapath:dp|regfile:rf|mem~694  ; clk          ; clk         ; 1.000        ; 0.023      ; 9.545      ;
+; -8.489 ; proc_mips:mips1|datapath:dp|flopr:pcreg|q[3] ; proc_mips:mips1|datapath:dp|regfile:rf|mem~88   ; clk          ; clk         ; 1.000        ; 0.003      ; 9.524      ;
+; -8.488 ; proc_mips:mips1|datapath:dp|flopr:pcreg|q[3] ; proc_mips:mips1|datapath:dp|regfile:rf|mem~382  ; clk          ; clk         ; 1.000        ; 0.034      ; 9.554      ;
+; -8.484 ; proc_mips:mips1|datapath:dp|flopr:pcreg|q[3] ; proc_mips:mips1|datapath:dp|regfile:rf|mem~86   ; clk          ; clk         ; 1.000        ; 0.028      ; 9.544      ;
+; -8.483 ; proc_mips:mips1|datapath:dp|flopr:pcreg|q[4] ; proc_mips:mips1|datapath:dp|regfile:rf|mem~734  ; clk          ; clk         ; 1.000        ; -0.003     ; 9.512      ;
+; -8.482 ; proc_mips:mips1|datapath:dp|flopr:pcreg|q[5] ; proc_mips:mips1|datapath:dp|regfile:rf|mem~950  ; clk          ; clk         ; 1.000        ; -0.007     ; 9.507      ;
+; -8.481 ; proc_mips:mips1|datapath:dp|flopr:pcreg|q[3] ; proc_mips:mips1|datapath:dp|regfile:rf|mem~470  ; clk          ; clk         ; 1.000        ; 0.028      ; 9.541      ;
+; -8.478 ; proc_mips:mips1|datapath:dp|flopr:pcreg|q[4] ; proc_mips:mips1|datapath:dp|regfile:rf|mem~766  ; clk          ; clk         ; 1.000        ; -0.003     ; 9.507      ;
+; -8.477 ; proc_mips:mips1|datapath:dp|flopr:pcreg|q[5] ; proc_mips:mips1|datapath:dp|regfile:rf|mem~734  ; clk          ; clk         ; 1.000        ; -0.003     ; 9.506      ;
+; -8.475 ; proc_mips:mips1|datapath:dp|flopr:pcreg|q[4] ; proc_mips:mips1|datapath:dp|regfile:rf|mem~391  ; clk          ; clk         ; 1.000        ; 0.000      ; 9.507      ;
+; -8.474 ; proc_mips:mips1|datapath:dp|flopr:pcreg|q[4] ; proc_mips:mips1|datapath:dp|regfile:rf|mem~455  ; clk          ; clk         ; 1.000        ; 0.000      ; 9.506      ;
+; -8.472 ; proc_mips:mips1|datapath:dp|flopr:pcreg|q[5] ; proc_mips:mips1|datapath:dp|regfile:rf|mem~766  ; clk          ; clk         ; 1.000        ; -0.003     ; 9.501      ;
+; -8.471 ; proc_mips:mips1|datapath:dp|flopr:pcreg|q[2] ; proc_mips:mips1|datapath:dp|regfile:rf|mem~86   ; clk          ; clk         ; 1.000        ; 0.028      ; 9.531      ;
+; -8.470 ; proc_mips:mips1|datapath:dp|flopr:pcreg|q[4] ; proc_mips:mips1|datapath:dp|regfile:rf|mem~921  ; clk          ; clk         ; 1.000        ; 0.036      ; 9.538      ;
+; -8.469 ; proc_mips:mips1|datapath:dp|flopr:pcreg|q[2] ; proc_mips:mips1|datapath:dp|regfile:rf|mem~382  ; clk          ; clk         ; 1.000        ; 0.034      ; 9.535      ;
+; -8.468 ; proc_mips:mips1|datapath:dp|flopr:pcreg|q[2] ; proc_mips:mips1|datapath:dp|regfile:rf|mem~470  ; clk          ; clk         ; 1.000        ; 0.028      ; 9.528      ;
+; -8.465 ; proc_mips:mips1|datapath:dp|flopr:pcreg|q[4] ; proc_mips:mips1|datapath:dp|regfile:rf|mem~216  ; clk          ; clk         ; 1.000        ; 0.003      ; 9.500      ;
+; -8.461 ; proc_mips:mips1|datapath:dp|flopr:pcreg|q[5] ; proc_mips:mips1|datapath:dp|regfile:rf|mem~391  ; clk          ; clk         ; 1.000        ; 0.000      ; 9.493      ;
+; -8.460 ; proc_mips:mips1|datapath:dp|flopr:pcreg|q[5] ; proc_mips:mips1|datapath:dp|regfile:rf|mem~455  ; clk          ; clk         ; 1.000        ; 0.000      ; 9.492      ;
+; -8.456 ; proc_mips:mips1|datapath:dp|flopr:pcreg|q[5] ; proc_mips:mips1|datapath:dp|regfile:rf|mem~921  ; clk          ; clk         ; 1.000        ; 0.036      ; 9.524      ;
+; -8.456 ; proc_mips:mips1|datapath:dp|flopr:pcreg|q[4] ; proc_mips:mips1|datapath:dp|regfile:rf|mem~382  ; clk          ; clk         ; 1.000        ; 0.034      ; 9.522      ;
+; -8.454 ; proc_mips:mips1|datapath:dp|flopr:pcreg|q[4] ; proc_mips:mips1|datapath:dp|regfile:rf|mem~246  ; clk          ; clk         ; 1.000        ; 0.007      ; 9.493      ;
+; -8.454 ; proc_mips:mips1|datapath:dp|flopr:pcreg|q[4] ; proc_mips:mips1|datapath:dp|regfile:rf|mem~135  ; clk          ; clk         ; 1.000        ; 0.005      ; 9.491      ;
+; -8.454 ; proc_mips:mips1|datapath:dp|flopr:pcreg|q[4] ; proc_mips:mips1|datapath:dp|regfile:rf|mem~263  ; clk          ; clk         ; 1.000        ; 0.005      ; 9.491      ;
+; -8.452 ; proc_mips:mips1|datapath:dp|flopr:pcreg|q[3] ; proc_mips:mips1|datapath:dp|regfile:rf|mem~806  ; clk          ; clk         ; 1.000        ; 0.026      ; 9.510      ;
+; -8.452 ; proc_mips:mips1|datapath:dp|flopr:pcreg|q[3] ; proc_mips:mips1|datapath:dp|regfile:rf|mem~902  ; clk          ; clk         ; 1.000        ; 0.026      ; 9.510      ;
+; -8.451 ; proc_mips:mips1|datapath:dp|flopr:pcreg|q[5] ; proc_mips:mips1|datapath:dp|regfile:rf|mem~216  ; clk          ; clk         ; 1.000        ; 0.003      ; 9.486      ;
+; -8.450 ; proc_mips:mips1|datapath:dp|flopr:pcreg|q[5] ; proc_mips:mips1|datapath:dp|regfile:rf|mem~382  ; clk          ; clk         ; 1.000        ; 0.034      ; 9.516      ;
+; -8.447 ; proc_mips:mips1|datapath:dp|flopr:pcreg|q[4] ; proc_mips:mips1|datapath:dp|regfile:rf|mem~132  ; clk          ; clk         ; 1.000        ; -0.015     ; 9.464      ;
+; -8.447 ; proc_mips:mips1|datapath:dp|flopr:pcreg|q[3] ; proc_mips:mips1|datapath:dp|regfile:rf|mem~406  ; clk          ; clk         ; 1.000        ; 0.000      ; 9.479      ;
+; -8.446 ; proc_mips:mips1|datapath:dp|flopr:pcreg|q[4] ; proc_mips:mips1|datapath:dp|regfile:rf|mem~698  ; clk          ; clk         ; 1.000        ; -0.002     ; 9.476      ;
+; -8.446 ; proc_mips:mips1|datapath:dp|flopr:pcreg|q[4] ; proc_mips:mips1|datapath:dp|regfile:rf|mem~730  ; clk          ; clk         ; 1.000        ; -0.002     ; 9.476      ;
+; -8.445 ; proc_mips:mips1|datapath:dp|flopr:pcreg|q[4] ; proc_mips:mips1|datapath:dp|regfile:rf|mem~366  ; clk          ; clk         ; 1.000        ; -0.033     ; 9.444      ;
+; -8.445 ; proc_mips:mips1|datapath:dp|flopr:pcreg|q[6] ; proc_mips:mips1|datapath:dp|regfile:rf|mem~54   ; clk          ; clk         ; 1.000        ; 0.035      ; 9.512      ;
+; -8.443 ; proc_mips:mips1|datapath:dp|flopr:pcreg|q[6] ; proc_mips:mips1|datapath:dp|regfile:rf|mem~310  ; clk          ; clk         ; 1.000        ; 0.035      ; 9.510      ;
+; -8.443 ; proc_mips:mips1|datapath:dp|flopr:pcreg|q[3] ; proc_mips:mips1|datapath:dp|regfile:rf|mem~1014 ; clk          ; clk         ; 1.000        ; 0.010      ; 9.485      ;
+; -8.442 ; proc_mips:mips1|datapath:dp|flopr:pcreg|q[3] ; proc_mips:mips1|datapath:dp|regfile:rf|mem~918  ; clk          ; clk         ; 1.000        ; -0.011     ; 9.463      ;
+; -8.440 ; proc_mips:mips1|datapath:dp|flopr:pcreg|q[4] ; proc_mips:mips1|datapath:dp|regfile:rf|mem~150  ; clk          ; clk         ; 1.000        ; 0.023      ; 9.495      ;
+; -8.440 ; proc_mips:mips1|datapath:dp|flopr:pcreg|q[5] ; proc_mips:mips1|datapath:dp|regfile:rf|mem~246  ; clk          ; clk         ; 1.000        ; 0.007      ; 9.479      ;
+; -8.440 ; proc_mips:mips1|datapath:dp|flopr:pcreg|q[5] ; proc_mips:mips1|datapath:dp|regfile:rf|mem~135  ; clk          ; clk         ; 1.000        ; 0.005      ; 9.477      ;
+; -8.440 ; proc_mips:mips1|datapath:dp|flopr:pcreg|q[5] ; proc_mips:mips1|datapath:dp|regfile:rf|mem~263  ; clk          ; clk         ; 1.000        ; 0.005      ; 9.477      ;
+; -8.437 ; proc_mips:mips1|datapath:dp|flopr:pcreg|q[4] ; proc_mips:mips1|datapath:dp|regfile:rf|mem~696  ; clk          ; clk         ; 1.000        ; 0.000      ; 9.469      ;
+; -8.437 ; proc_mips:mips1|datapath:dp|flopr:pcreg|q[4] ; proc_mips:mips1|datapath:dp|regfile:rf|mem~760  ; clk          ; clk         ; 1.000        ; 0.000      ; 9.469      ;
+; -8.437 ; proc_mips:mips1|datapath:dp|flopr:pcreg|q[4] ; proc_mips:mips1|datapath:dp|regfile:rf|mem~278  ; clk          ; clk         ; 1.000        ; 0.023      ; 9.492      ;
+; -8.436 ; proc_mips:mips1|datapath:dp|flopr:pcreg|q[3] ; proc_mips:mips1|datapath:dp|regfile:rf|mem~758  ; clk          ; clk         ; 1.000        ; 0.023      ; 9.491      ;
+; -8.436 ; proc_mips:mips1|datapath:dp|flopr:pcreg|q[3] ; proc_mips:mips1|datapath:dp|regfile:rf|mem~694  ; clk          ; clk         ; 1.000        ; 0.023      ; 9.491      ;
+; -8.435 ; proc_mips:mips1|datapath:dp|flopr:pcreg|q[4] ; proc_mips:mips1|datapath:dp|regfile:rf|mem~854  ; clk          ; clk         ; 1.000        ; -0.011     ; 9.456      ;
+; -8.434 ; proc_mips:mips1|datapath:dp|flopr:pcreg|q[2] ; proc_mips:mips1|datapath:dp|regfile:rf|mem~406  ; clk          ; clk         ; 1.000        ; 0.000      ; 9.466      ;
+; -8.433 ; proc_mips:mips1|datapath:dp|flopr:pcreg|q[2] ; proc_mips:mips1|datapath:dp|regfile:rf|mem~806  ; clk          ; clk         ; 1.000        ; 0.026      ; 9.491      ;
+; -8.433 ; proc_mips:mips1|datapath:dp|flopr:pcreg|q[2] ; proc_mips:mips1|datapath:dp|regfile:rf|mem~902  ; clk          ; clk         ; 1.000        ; 0.026      ; 9.491      ;
+; -8.433 ; proc_mips:mips1|datapath:dp|flopr:pcreg|q[5] ; proc_mips:mips1|datapath:dp|regfile:rf|mem~132  ; clk          ; clk         ; 1.000        ; -0.015     ; 9.450      ;
+; -8.432 ; proc_mips:mips1|datapath:dp|flopr:pcreg|q[4] ; proc_mips:mips1|datapath:dp|regfile:rf|mem~615  ; clk          ; clk         ; 1.000        ; 0.015      ; 9.479      ;
+; -8.432 ; proc_mips:mips1|datapath:dp|flopr:pcreg|q[5] ; proc_mips:mips1|datapath:dp|regfile:rf|mem~698  ; clk          ; clk         ; 1.000        ; -0.002     ; 9.462      ;
+; -8.432 ; proc_mips:mips1|datapath:dp|flopr:pcreg|q[5] ; proc_mips:mips1|datapath:dp|regfile:rf|mem~730  ; clk          ; clk         ; 1.000        ; -0.002     ; 9.462      ;
+; -8.431 ; proc_mips:mips1|datapath:dp|flopr:pcreg|q[5] ; proc_mips:mips1|datapath:dp|regfile:rf|mem~366  ; clk          ; clk         ; 1.000        ; -0.033     ; 9.430      ;
+; -8.430 ; proc_mips:mips1|datapath:dp|flopr:pcreg|q[3] ; proc_mips:mips1|datapath:dp|regfile:rf|mem~326  ; clk          ; clk         ; 1.000        ; 0.028      ; 9.490      ;
+; -8.430 ; proc_mips:mips1|datapath:dp|flopr:pcreg|q[2] ; proc_mips:mips1|datapath:dp|regfile:rf|mem~1014 ; clk          ; clk         ; 1.000        ; 0.010      ; 9.472      ;
+; -8.429 ; proc_mips:mips1|datapath:dp|flopr:pcreg|q[2] ; proc_mips:mips1|datapath:dp|regfile:rf|mem~918  ; clk          ; clk         ; 1.000        ; -0.011     ; 9.450      ;
+; -8.428 ; proc_mips:mips1|datapath:dp|flopr:pcreg|q[3] ; proc_mips:mips1|datapath:dp|regfile:rf|mem~446  ; clk          ; clk         ; 1.000        ; -0.004     ; 9.456      ;
+; -8.428 ; proc_mips:mips1|datapath:dp|flopr:pcreg|q[4] ; proc_mips:mips1|datapath:dp|regfile:rf|mem~167  ; clk          ; clk         ; 1.000        ; 0.015      ; 9.475      ;
+; -8.428 ; proc_mips:mips1|datapath:dp|flopr:pcreg|q[3] ; proc_mips:mips1|datapath:dp|regfile:rf|mem~950  ; clk          ; clk         ; 1.000        ; -0.007     ; 9.453      ;
+; -8.426 ; proc_mips:mips1|datapath:dp|flopr:pcreg|q[4] ; proc_mips:mips1|datapath:dp|regfile:rf|mem~679  ; clk          ; clk         ; 1.000        ; 0.023      ; 9.481      ;
+; -8.426 ; proc_mips:mips1|datapath:dp|flopr:pcreg|q[5] ; proc_mips:mips1|datapath:dp|regfile:rf|mem~150  ; clk          ; clk         ; 1.000        ; 0.023      ; 9.481      ;
+; -8.424 ; proc_mips:mips1|datapath:dp|flopr:pcreg|q[4] ; proc_mips:mips1|datapath:dp|regfile:rf|mem~640  ; clk          ; clk         ; 1.000        ; -0.019     ; 9.437      ;
+; -8.423 ; proc_mips:mips1|datapath:dp|flopr:pcreg|q[2] ; proc_mips:mips1|datapath:dp|regfile:rf|mem~758  ; clk          ; clk         ; 1.000        ; 0.023      ; 9.478      ;
+; -8.423 ; proc_mips:mips1|datapath:dp|flopr:pcreg|q[2] ; proc_mips:mips1|datapath:dp|regfile:rf|mem~694  ; clk          ; clk         ; 1.000        ; 0.023      ; 9.478      ;
+; -8.423 ; proc_mips:mips1|datapath:dp|flopr:pcreg|q[5] ; proc_mips:mips1|datapath:dp|regfile:rf|mem~696  ; clk          ; clk         ; 1.000        ; 0.000      ; 9.455      ;
+; -8.423 ; proc_mips:mips1|datapath:dp|flopr:pcreg|q[5] ; proc_mips:mips1|datapath:dp|regfile:rf|mem~760  ; clk          ; clk         ; 1.000        ; 0.000      ; 9.455      ;
+; -8.423 ; proc_mips:mips1|datapath:dp|flopr:pcreg|q[5] ; proc_mips:mips1|datapath:dp|regfile:rf|mem~278  ; clk          ; clk         ; 1.000        ; 0.023      ; 9.478      ;
+; -8.421 ; proc_mips:mips1|datapath:dp|flopr:pcreg|q[4] ; proc_mips:mips1|datapath:dp|regfile:rf|mem~608  ; clk          ; clk         ; 1.000        ; -0.019     ; 9.434      ;
+; -8.421 ; proc_mips:mips1|datapath:dp|flopr:pcreg|q[5] ; proc_mips:mips1|datapath:dp|regfile:rf|mem~854  ; clk          ; clk         ; 1.000        ; -0.011     ; 9.442      ;
++--------+----------------------------------------------+-------------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Hold: 'clk'                                                                                                  ;
++-------+---------------------+---------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node           ; To Node             ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+---------------------+---------------------+--------------+-------------+--------------+------------+------------+
+; 0.215 ; dmem:dmem1|mem~1193 ; dmem:dmem1|mem~1193 ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; dmem:dmem1|mem~1738 ; dmem:dmem1|mem~1738 ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; dmem:dmem1|mem~781  ; dmem:dmem1|mem~781  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; dmem:dmem1|mem~909  ; dmem:dmem1|mem~909  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; dmem:dmem1|mem~653  ; dmem:dmem1|mem~653  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; dmem:dmem1|mem~1037 ; dmem:dmem1|mem~1037 ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; dmem:dmem1|mem~621  ; dmem:dmem1|mem~621  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; dmem:dmem1|mem~749  ; dmem:dmem1|mem~749  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; dmem:dmem1|mem~877  ; dmem:dmem1|mem~877  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; dmem:dmem1|mem~1005 ; dmem:dmem1|mem~1005 ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; dmem:dmem1|mem~685  ; dmem:dmem1|mem~685  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; dmem:dmem1|mem~557  ; dmem:dmem1|mem~557  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; dmem:dmem1|mem~813  ; dmem:dmem1|mem~813  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; dmem:dmem1|mem~941  ; dmem:dmem1|mem~941  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; dmem:dmem1|mem~973  ; dmem:dmem1|mem~973  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; dmem:dmem1|mem~717  ; dmem:dmem1|mem~717  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; dmem:dmem1|mem~845  ; dmem:dmem1|mem~845  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; dmem:dmem1|mem~589  ; dmem:dmem1|mem~589  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; dmem:dmem1|mem~205  ; dmem:dmem1|mem~205  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; dmem:dmem1|mem~173  ; dmem:dmem1|mem~173  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; dmem:dmem1|mem~269  ; dmem:dmem1|mem~269  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; dmem:dmem1|mem~237  ; dmem:dmem1|mem~237  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; dmem:dmem1|mem~493  ; dmem:dmem1|mem~493  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; dmem:dmem1|mem~525  ; dmem:dmem1|mem~525  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; dmem:dmem1|mem~461  ; dmem:dmem1|mem~461  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; dmem:dmem1|mem~429  ; dmem:dmem1|mem~429  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; dmem:dmem1|mem~45   ; dmem:dmem1|mem~45   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; dmem:dmem1|mem~109  ; dmem:dmem1|mem~109  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; dmem:dmem1|mem~77   ; dmem:dmem1|mem~77   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; dmem:dmem1|mem~141  ; dmem:dmem1|mem~141  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; dmem:dmem1|mem~397  ; dmem:dmem1|mem~397  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; dmem:dmem1|mem~333  ; dmem:dmem1|mem~333  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; dmem:dmem1|mem~365  ; dmem:dmem1|mem~365  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; dmem:dmem1|mem~301  ; dmem:dmem1|mem~301  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; dmem:dmem1|mem~1901 ; dmem:dmem1|mem~1901 ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; dmem:dmem1|mem~1645 ; dmem:dmem1|mem~1645 ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; dmem:dmem1|mem~2029 ; dmem:dmem1|mem~2029 ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; dmem:dmem1|mem~1805 ; dmem:dmem1|mem~1805 ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; dmem:dmem1|mem~1677 ; dmem:dmem1|mem~1677 ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; dmem:dmem1|mem~2061 ; dmem:dmem1|mem~2061 ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; dmem:dmem1|mem~1933 ; dmem:dmem1|mem~1933 ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; dmem:dmem1|mem~1581 ; dmem:dmem1|mem~1581 ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; dmem:dmem1|mem~1837 ; dmem:dmem1|mem~1837 ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; dmem:dmem1|mem~1709 ; dmem:dmem1|mem~1709 ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; dmem:dmem1|mem~1965 ; dmem:dmem1|mem~1965 ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; dmem:dmem1|mem~1869 ; dmem:dmem1|mem~1869 ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; dmem:dmem1|mem~1613 ; dmem:dmem1|mem~1613 ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; dmem:dmem1|mem~1741 ; dmem:dmem1|mem~1741 ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; dmem:dmem1|mem~1997 ; dmem:dmem1|mem~1997 ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; dmem:dmem1|mem~1389 ; dmem:dmem1|mem~1389 ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; dmem:dmem1|mem~1421 ; dmem:dmem1|mem~1421 ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; dmem:dmem1|mem~1325 ; dmem:dmem1|mem~1325 ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; dmem:dmem1|mem~1357 ; dmem:dmem1|mem~1357 ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; dmem:dmem1|mem~1453 ; dmem:dmem1|mem~1453 ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; dmem:dmem1|mem~1549 ; dmem:dmem1|mem~1549 ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; dmem:dmem1|mem~1485 ; dmem:dmem1|mem~1485 ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; dmem:dmem1|mem~1293 ; dmem:dmem1|mem~1293 ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; dmem:dmem1|mem~1197 ; dmem:dmem1|mem~1197 ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; dmem:dmem1|mem~1261 ; dmem:dmem1|mem~1261 ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; dmem:dmem1|mem~1229 ; dmem:dmem1|mem~1229 ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; dmem:dmem1|mem~1133 ; dmem:dmem1|mem~1133 ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; dmem:dmem1|mem~1101 ; dmem:dmem1|mem~1101 ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; dmem:dmem1|mem~1327 ; dmem:dmem1|mem~1327 ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; dmem:dmem1|mem~1359 ; dmem:dmem1|mem~1359 ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; dmem:dmem1|mem~1391 ; dmem:dmem1|mem~1391 ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; dmem:dmem1|mem~1423 ; dmem:dmem1|mem~1423 ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; dmem:dmem1|mem~1263 ; dmem:dmem1|mem~1263 ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; dmem:dmem1|mem~1199 ; dmem:dmem1|mem~1199 ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; dmem:dmem1|mem~1231 ; dmem:dmem1|mem~1231 ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; dmem:dmem1|mem~1295 ; dmem:dmem1|mem~1295 ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; dmem:dmem1|mem~1103 ; dmem:dmem1|mem~1103 ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; dmem:dmem1|mem~1071 ; dmem:dmem1|mem~1071 ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; dmem:dmem1|mem~1167 ; dmem:dmem1|mem~1167 ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; dmem:dmem1|mem~1135 ; dmem:dmem1|mem~1135 ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; dmem:dmem1|mem~1487 ; dmem:dmem1|mem~1487 ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; dmem:dmem1|mem~1455 ; dmem:dmem1|mem~1455 ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; dmem:dmem1|mem~1519 ; dmem:dmem1|mem~1519 ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; dmem:dmem1|mem~1551 ; dmem:dmem1|mem~1551 ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; dmem:dmem1|mem~847  ; dmem:dmem1|mem~847  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; dmem:dmem1|mem~591  ; dmem:dmem1|mem~591  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; dmem:dmem1|mem~975  ; dmem:dmem1|mem~975  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; dmem:dmem1|mem~719  ; dmem:dmem1|mem~719  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; dmem:dmem1|mem~911  ; dmem:dmem1|mem~911  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; dmem:dmem1|mem~655  ; dmem:dmem1|mem~655  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; dmem:dmem1|mem~1039 ; dmem:dmem1|mem~1039 ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; dmem:dmem1|mem~783  ; dmem:dmem1|mem~783  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; dmem:dmem1|mem~943  ; dmem:dmem1|mem~943  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; dmem:dmem1|mem~687  ; dmem:dmem1|mem~687  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; dmem:dmem1|mem~559  ; dmem:dmem1|mem~559  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; dmem:dmem1|mem~815  ; dmem:dmem1|mem~815  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; dmem:dmem1|mem~879  ; dmem:dmem1|mem~879  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; dmem:dmem1|mem~623  ; dmem:dmem1|mem~623  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; dmem:dmem1|mem~751  ; dmem:dmem1|mem~751  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; dmem:dmem1|mem~1007 ; dmem:dmem1|mem~1007 ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; dmem:dmem1|mem~431  ; dmem:dmem1|mem~431  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; dmem:dmem1|mem~463  ; dmem:dmem1|mem~463  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; dmem:dmem1|mem~495  ; dmem:dmem1|mem~495  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; dmem:dmem1|mem~527  ; dmem:dmem1|mem~527  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; dmem:dmem1|mem~175  ; dmem:dmem1|mem~175  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; dmem:dmem1|mem~207  ; dmem:dmem1|mem~207  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
++-------+---------------------+---------------------+--------------+-------------+--------------+------------+------------+
+
+
++------------------------------------------------------------------------------------------------------+
+; Fast Model Minimum Pulse Width: 'clk'                                                                ;
++--------+--------------+----------------+------------------+-------+------------+---------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock ; Clock Edge ; Target              ;
++--------+--------------+----------------+------------------+-------+------------+---------------------+
+; -1.380 ; 1.000        ; 2.380          ; Port Rate        ; clk   ; Rise       ; clk                 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; dmem:dmem1|mem~100  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; dmem:dmem1|mem~100  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; dmem:dmem1|mem~1000 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; dmem:dmem1|mem~1000 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; dmem:dmem1|mem~1001 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; dmem:dmem1|mem~1001 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; dmem:dmem1|mem~1002 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; dmem:dmem1|mem~1002 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; dmem:dmem1|mem~1003 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; dmem:dmem1|mem~1003 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; dmem:dmem1|mem~1004 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; dmem:dmem1|mem~1004 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; dmem:dmem1|mem~1005 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; dmem:dmem1|mem~1005 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; dmem:dmem1|mem~1006 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; dmem:dmem1|mem~1006 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; dmem:dmem1|mem~1007 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; dmem:dmem1|mem~1007 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; dmem:dmem1|mem~1008 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; dmem:dmem1|mem~1008 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; dmem:dmem1|mem~1009 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; dmem:dmem1|mem~1009 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; dmem:dmem1|mem~101  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; dmem:dmem1|mem~101  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; dmem:dmem1|mem~1010 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; dmem:dmem1|mem~1010 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; dmem:dmem1|mem~1011 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; dmem:dmem1|mem~1011 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; dmem:dmem1|mem~1012 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; dmem:dmem1|mem~1012 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; dmem:dmem1|mem~1013 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; dmem:dmem1|mem~1013 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; dmem:dmem1|mem~1014 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; dmem:dmem1|mem~1014 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; dmem:dmem1|mem~1015 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; dmem:dmem1|mem~1015 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; dmem:dmem1|mem~1016 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; dmem:dmem1|mem~1016 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; dmem:dmem1|mem~1017 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; dmem:dmem1|mem~1017 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; dmem:dmem1|mem~1018 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; dmem:dmem1|mem~1018 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; dmem:dmem1|mem~1019 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; dmem:dmem1|mem~1019 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; dmem:dmem1|mem~102  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; dmem:dmem1|mem~102  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; dmem:dmem1|mem~1020 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; dmem:dmem1|mem~1020 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; dmem:dmem1|mem~1021 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; dmem:dmem1|mem~1021 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; dmem:dmem1|mem~1022 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; dmem:dmem1|mem~1022 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; dmem:dmem1|mem~1023 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; dmem:dmem1|mem~1023 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; dmem:dmem1|mem~1024 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; dmem:dmem1|mem~1024 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; dmem:dmem1|mem~1025 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; dmem:dmem1|mem~1025 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; dmem:dmem1|mem~1026 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; dmem:dmem1|mem~1026 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; dmem:dmem1|mem~1027 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; dmem:dmem1|mem~1027 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; dmem:dmem1|mem~1028 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; dmem:dmem1|mem~1028 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; dmem:dmem1|mem~1029 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; dmem:dmem1|mem~1029 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; dmem:dmem1|mem~103  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; dmem:dmem1|mem~103  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; dmem:dmem1|mem~1030 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; dmem:dmem1|mem~1030 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; dmem:dmem1|mem~1031 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; dmem:dmem1|mem~1031 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; dmem:dmem1|mem~1032 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; dmem:dmem1|mem~1032 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; dmem:dmem1|mem~1033 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; dmem:dmem1|mem~1033 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; dmem:dmem1|mem~1034 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; dmem:dmem1|mem~1034 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; dmem:dmem1|mem~1035 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; dmem:dmem1|mem~1035 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; dmem:dmem1|mem~1036 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; dmem:dmem1|mem~1036 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; dmem:dmem1|mem~1037 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; dmem:dmem1|mem~1037 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; dmem:dmem1|mem~1038 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; dmem:dmem1|mem~1038 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; dmem:dmem1|mem~1039 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; dmem:dmem1|mem~1039 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; dmem:dmem1|mem~104  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; dmem:dmem1|mem~104  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; dmem:dmem1|mem~1040 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; dmem:dmem1|mem~1040 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; dmem:dmem1|mem~1041 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; dmem:dmem1|mem~1041 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; dmem:dmem1|mem~1042 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; dmem:dmem1|mem~1042 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; dmem:dmem1|mem~1043 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; dmem:dmem1|mem~1043 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; dmem:dmem1|mem~1044 ;
++--------+--------------+----------------+------------------+-------+------------+---------------------+
+
+
++------------------------------------------------------------------------------+
+; Clock to Output Times                                                        ;
++----------------+------------+--------+--------+------------+-----------------+
+; Data Port      ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++----------------+------------+--------+--------+------------+-----------------+
+; dataadr[*]     ; clk        ; 12.229 ; 12.229 ; Rise       ; clk             ;
+;  dataadr[0]    ; clk        ; 10.425 ; 10.425 ; Rise       ; clk             ;
+;  dataadr[1]    ; clk        ; 10.386 ; 10.386 ; Rise       ; clk             ;
+;  dataadr[2]    ; clk        ; 9.642  ; 9.642  ; Rise       ; clk             ;
+;  dataadr[3]    ; clk        ; 9.644  ; 9.644  ; Rise       ; clk             ;
+;  dataadr[4]    ; clk        ; 9.971  ; 9.971  ; Rise       ; clk             ;
+;  dataadr[5]    ; clk        ; 9.775  ; 9.775  ; Rise       ; clk             ;
+;  dataadr[6]    ; clk        ; 10.494 ; 10.494 ; Rise       ; clk             ;
+;  dataadr[7]    ; clk        ; 9.672  ; 9.672  ; Rise       ; clk             ;
+;  dataadr[8]    ; clk        ; 10.848 ; 10.848 ; Rise       ; clk             ;
+;  dataadr[9]    ; clk        ; 10.676 ; 10.676 ; Rise       ; clk             ;
+;  dataadr[10]   ; clk        ; 10.600 ; 10.600 ; Rise       ; clk             ;
+;  dataadr[11]   ; clk        ; 11.125 ; 11.125 ; Rise       ; clk             ;
+;  dataadr[12]   ; clk        ; 10.875 ; 10.875 ; Rise       ; clk             ;
+;  dataadr[13]   ; clk        ; 11.123 ; 11.123 ; Rise       ; clk             ;
+;  dataadr[14]   ; clk        ; 10.706 ; 10.706 ; Rise       ; clk             ;
+;  dataadr[15]   ; clk        ; 11.596 ; 11.596 ; Rise       ; clk             ;
+;  dataadr[16]   ; clk        ; 11.046 ; 11.046 ; Rise       ; clk             ;
+;  dataadr[17]   ; clk        ; 10.890 ; 10.890 ; Rise       ; clk             ;
+;  dataadr[18]   ; clk        ; 10.580 ; 10.580 ; Rise       ; clk             ;
+;  dataadr[19]   ; clk        ; 10.895 ; 10.895 ; Rise       ; clk             ;
+;  dataadr[20]   ; clk        ; 12.229 ; 12.229 ; Rise       ; clk             ;
+;  dataadr[21]   ; clk        ; 12.080 ; 12.080 ; Rise       ; clk             ;
+;  dataadr[22]   ; clk        ; 10.982 ; 10.982 ; Rise       ; clk             ;
+;  dataadr[23]   ; clk        ; 11.237 ; 11.237 ; Rise       ; clk             ;
+;  dataadr[24]   ; clk        ; 10.925 ; 10.925 ; Rise       ; clk             ;
+;  dataadr[25]   ; clk        ; 11.256 ; 11.256 ; Rise       ; clk             ;
+;  dataadr[26]   ; clk        ; 10.985 ; 10.985 ; Rise       ; clk             ;
+;  dataadr[27]   ; clk        ; 12.181 ; 12.181 ; Rise       ; clk             ;
+;  dataadr[28]   ; clk        ; 11.179 ; 11.179 ; Rise       ; clk             ;
+;  dataadr[29]   ; clk        ; 11.210 ; 11.210 ; Rise       ; clk             ;
+;  dataadr[30]   ; clk        ; 11.058 ; 11.058 ; Rise       ; clk             ;
+;  dataadr[31]   ; clk        ; 11.566 ; 11.566 ; Rise       ; clk             ;
+; memwrite       ; clk        ; 6.140  ; 6.140  ; Rise       ; clk             ;
+; writedata[*]   ; clk        ; 9.538  ; 9.538  ; Rise       ; clk             ;
+;  writedata[0]  ; clk        ; 7.727  ; 7.727  ; Rise       ; clk             ;
+;  writedata[1]  ; clk        ; 7.945  ; 7.945  ; Rise       ; clk             ;
+;  writedata[2]  ; clk        ; 7.794  ; 7.794  ; Rise       ; clk             ;
+;  writedata[3]  ; clk        ; 8.204  ; 8.204  ; Rise       ; clk             ;
+;  writedata[4]  ; clk        ; 7.558  ; 7.558  ; Rise       ; clk             ;
+;  writedata[5]  ; clk        ; 7.912  ; 7.912  ; Rise       ; clk             ;
+;  writedata[6]  ; clk        ; 7.718  ; 7.718  ; Rise       ; clk             ;
+;  writedata[7]  ; clk        ; 7.717  ; 7.717  ; Rise       ; clk             ;
+;  writedata[8]  ; clk        ; 7.618  ; 7.618  ; Rise       ; clk             ;
+;  writedata[9]  ; clk        ; 8.236  ; 8.236  ; Rise       ; clk             ;
+;  writedata[10] ; clk        ; 8.232  ; 8.232  ; Rise       ; clk             ;
+;  writedata[11] ; clk        ; 7.647  ; 7.647  ; Rise       ; clk             ;
+;  writedata[12] ; clk        ; 8.495  ; 8.495  ; Rise       ; clk             ;
+;  writedata[13] ; clk        ; 8.097  ; 8.097  ; Rise       ; clk             ;
+;  writedata[14] ; clk        ; 7.781  ; 7.781  ; Rise       ; clk             ;
+;  writedata[15] ; clk        ; 7.657  ; 7.657  ; Rise       ; clk             ;
+;  writedata[16] ; clk        ; 8.010  ; 8.010  ; Rise       ; clk             ;
+;  writedata[17] ; clk        ; 8.654  ; 8.654  ; Rise       ; clk             ;
+;  writedata[18] ; clk        ; 8.315  ; 8.315  ; Rise       ; clk             ;
+;  writedata[19] ; clk        ; 7.952  ; 7.952  ; Rise       ; clk             ;
+;  writedata[20] ; clk        ; 8.130  ; 8.130  ; Rise       ; clk             ;
+;  writedata[21] ; clk        ; 8.274  ; 8.274  ; Rise       ; clk             ;
+;  writedata[22] ; clk        ; 8.118  ; 8.118  ; Rise       ; clk             ;
+;  writedata[23] ; clk        ; 8.452  ; 8.452  ; Rise       ; clk             ;
+;  writedata[24] ; clk        ; 8.207  ; 8.207  ; Rise       ; clk             ;
+;  writedata[25] ; clk        ; 8.431  ; 8.431  ; Rise       ; clk             ;
+;  writedata[26] ; clk        ; 8.469  ; 8.469  ; Rise       ; clk             ;
+;  writedata[27] ; clk        ; 8.625  ; 8.625  ; Rise       ; clk             ;
+;  writedata[28] ; clk        ; 7.539  ; 7.539  ; Rise       ; clk             ;
+;  writedata[29] ; clk        ; 9.538  ; 9.538  ; Rise       ; clk             ;
+;  writedata[30] ; clk        ; 8.261  ; 8.261  ; Rise       ; clk             ;
+;  writedata[31] ; clk        ; 9.094  ; 9.094  ; Rise       ; clk             ;
++----------------+------------+--------+--------+------------+-----------------+
+
+
++----------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                              ;
++----------------+------------+-------+-------+------------+-----------------+
+; Data Port      ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++----------------+------------+-------+-------+------------+-----------------+
+; dataadr[*]     ; clk        ; 5.672 ; 5.672 ; Rise       ; clk             ;
+;  dataadr[0]    ; clk        ; 6.121 ; 6.121 ; Rise       ; clk             ;
+;  dataadr[1]    ; clk        ; 7.132 ; 7.132 ; Rise       ; clk             ;
+;  dataadr[2]    ; clk        ; 5.876 ; 5.876 ; Rise       ; clk             ;
+;  dataadr[3]    ; clk        ; 6.227 ; 6.227 ; Rise       ; clk             ;
+;  dataadr[4]    ; clk        ; 6.304 ; 6.304 ; Rise       ; clk             ;
+;  dataadr[5]    ; clk        ; 6.139 ; 6.139 ; Rise       ; clk             ;
+;  dataadr[6]    ; clk        ; 6.969 ; 6.969 ; Rise       ; clk             ;
+;  dataadr[7]    ; clk        ; 6.547 ; 6.547 ; Rise       ; clk             ;
+;  dataadr[8]    ; clk        ; 6.306 ; 6.306 ; Rise       ; clk             ;
+;  dataadr[9]    ; clk        ; 6.377 ; 6.377 ; Rise       ; clk             ;
+;  dataadr[10]   ; clk        ; 6.416 ; 6.416 ; Rise       ; clk             ;
+;  dataadr[11]   ; clk        ; 6.847 ; 6.847 ; Rise       ; clk             ;
+;  dataadr[12]   ; clk        ; 6.937 ; 6.937 ; Rise       ; clk             ;
+;  dataadr[13]   ; clk        ; 6.716 ; 6.716 ; Rise       ; clk             ;
+;  dataadr[14]   ; clk        ; 6.536 ; 6.536 ; Rise       ; clk             ;
+;  dataadr[15]   ; clk        ; 6.832 ; 6.832 ; Rise       ; clk             ;
+;  dataadr[16]   ; clk        ; 7.030 ; 7.030 ; Rise       ; clk             ;
+;  dataadr[17]   ; clk        ; 6.646 ; 6.646 ; Rise       ; clk             ;
+;  dataadr[18]   ; clk        ; 6.013 ; 6.013 ; Rise       ; clk             ;
+;  dataadr[19]   ; clk        ; 6.420 ; 6.420 ; Rise       ; clk             ;
+;  dataadr[20]   ; clk        ; 6.593 ; 6.593 ; Rise       ; clk             ;
+;  dataadr[21]   ; clk        ; 6.876 ; 6.876 ; Rise       ; clk             ;
+;  dataadr[22]   ; clk        ; 6.255 ; 6.255 ; Rise       ; clk             ;
+;  dataadr[23]   ; clk        ; 6.415 ; 6.415 ; Rise       ; clk             ;
+;  dataadr[24]   ; clk        ; 5.939 ; 5.939 ; Rise       ; clk             ;
+;  dataadr[25]   ; clk        ; 6.077 ; 6.077 ; Rise       ; clk             ;
+;  dataadr[26]   ; clk        ; 5.672 ; 5.672 ; Rise       ; clk             ;
+;  dataadr[27]   ; clk        ; 6.859 ; 6.859 ; Rise       ; clk             ;
+;  dataadr[28]   ; clk        ; 5.747 ; 5.747 ; Rise       ; clk             ;
+;  dataadr[29]   ; clk        ; 6.763 ; 6.763 ; Rise       ; clk             ;
+;  dataadr[30]   ; clk        ; 6.522 ; 6.522 ; Rise       ; clk             ;
+;  dataadr[31]   ; clk        ; 6.915 ; 6.915 ; Rise       ; clk             ;
+; memwrite       ; clk        ; 5.483 ; 5.483 ; Rise       ; clk             ;
+; writedata[*]   ; clk        ; 5.140 ; 5.140 ; Rise       ; clk             ;
+;  writedata[0]  ; clk        ; 5.323 ; 5.323 ; Rise       ; clk             ;
+;  writedata[1]  ; clk        ; 5.722 ; 5.722 ; Rise       ; clk             ;
+;  writedata[2]  ; clk        ; 5.647 ; 5.647 ; Rise       ; clk             ;
+;  writedata[3]  ; clk        ; 6.449 ; 6.449 ; Rise       ; clk             ;
+;  writedata[4]  ; clk        ; 5.538 ; 5.538 ; Rise       ; clk             ;
+;  writedata[5]  ; clk        ; 5.844 ; 5.844 ; Rise       ; clk             ;
+;  writedata[6]  ; clk        ; 5.493 ; 5.493 ; Rise       ; clk             ;
+;  writedata[7]  ; clk        ; 5.768 ; 5.768 ; Rise       ; clk             ;
+;  writedata[8]  ; clk        ; 5.140 ; 5.140 ; Rise       ; clk             ;
+;  writedata[9]  ; clk        ; 6.039 ; 6.039 ; Rise       ; clk             ;
+;  writedata[10] ; clk        ; 5.922 ; 5.922 ; Rise       ; clk             ;
+;  writedata[11] ; clk        ; 5.519 ; 5.519 ; Rise       ; clk             ;
+;  writedata[12] ; clk        ; 5.868 ; 5.868 ; Rise       ; clk             ;
+;  writedata[13] ; clk        ; 5.780 ; 5.780 ; Rise       ; clk             ;
+;  writedata[14] ; clk        ; 5.560 ; 5.560 ; Rise       ; clk             ;
+;  writedata[15] ; clk        ; 5.475 ; 5.475 ; Rise       ; clk             ;
+;  writedata[16] ; clk        ; 5.888 ; 5.888 ; Rise       ; clk             ;
+;  writedata[17] ; clk        ; 5.861 ; 5.861 ; Rise       ; clk             ;
+;  writedata[18] ; clk        ; 6.113 ; 6.113 ; Rise       ; clk             ;
+;  writedata[19] ; clk        ; 5.622 ; 5.622 ; Rise       ; clk             ;
+;  writedata[20] ; clk        ; 5.714 ; 5.714 ; Rise       ; clk             ;
+;  writedata[21] ; clk        ; 5.765 ; 5.765 ; Rise       ; clk             ;
+;  writedata[22] ; clk        ; 5.611 ; 5.611 ; Rise       ; clk             ;
+;  writedata[23] ; clk        ; 5.856 ; 5.856 ; Rise       ; clk             ;
+;  writedata[24] ; clk        ; 5.509 ; 5.509 ; Rise       ; clk             ;
+;  writedata[25] ; clk        ; 5.980 ; 5.980 ; Rise       ; clk             ;
+;  writedata[26] ; clk        ; 5.443 ; 5.443 ; Rise       ; clk             ;
+;  writedata[27] ; clk        ; 5.851 ; 5.851 ; Rise       ; clk             ;
+;  writedata[28] ; clk        ; 5.172 ; 5.172 ; Rise       ; clk             ;
+;  writedata[29] ; clk        ; 6.646 ; 6.646 ; Rise       ; clk             ;
+;  writedata[30] ; clk        ; 5.921 ; 5.921 ; Rise       ; clk             ;
+;  writedata[31] ; clk        ; 6.254 ; 6.254 ; Rise       ; clk             ;
++----------------+------------+-------+-------+------------+-----------------+
+
+
++----------------------------------------------------------------------------------+
+; Multicorner Timing Analysis Summary                                              ;
++------------------+------------+-------+----------+---------+---------------------+
+; Clock            ; Setup      ; Hold  ; Recovery ; Removal ; Minimum Pulse Width ;
++------------------+------------+-------+----------+---------+---------------------+
+; Worst-case Slack ; -20.523    ; 0.215 ; N/A      ; N/A     ; -1.380              ;
+;  clk             ; -20.523    ; 0.215 ; N/A      ; N/A     ; -1.380              ;
+; Design-wide TNS  ; -47832.726 ; 0.0   ; 0.0      ; 0.0     ; -3079.38            ;
+;  clk             ; -47832.726 ; 0.000 ; N/A      ; N/A     ; -3079.380           ;
++------------------+------------+-------+----------+---------+---------------------+
+
+
++------------------------------------------------------------------------------+
+; Clock to Output Times                                                        ;
++----------------+------------+--------+--------+------------+-----------------+
+; Data Port      ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++----------------+------------+--------+--------+------------+-----------------+
+; dataadr[*]     ; clk        ; 25.198 ; 25.198 ; Rise       ; clk             ;
+;  dataadr[0]    ; clk        ; 21.253 ; 21.253 ; Rise       ; clk             ;
+;  dataadr[1]    ; clk        ; 21.427 ; 21.427 ; Rise       ; clk             ;
+;  dataadr[2]    ; clk        ; 19.759 ; 19.759 ; Rise       ; clk             ;
+;  dataadr[3]    ; clk        ; 19.693 ; 19.693 ; Rise       ; clk             ;
+;  dataadr[4]    ; clk        ; 20.490 ; 20.490 ; Rise       ; clk             ;
+;  dataadr[5]    ; clk        ; 19.978 ; 19.978 ; Rise       ; clk             ;
+;  dataadr[6]    ; clk        ; 21.288 ; 21.288 ; Rise       ; clk             ;
+;  dataadr[7]    ; clk        ; 19.645 ; 19.645 ; Rise       ; clk             ;
+;  dataadr[8]    ; clk        ; 22.382 ; 22.382 ; Rise       ; clk             ;
+;  dataadr[9]    ; clk        ; 21.985 ; 21.985 ; Rise       ; clk             ;
+;  dataadr[10]   ; clk        ; 21.789 ; 21.789 ; Rise       ; clk             ;
+;  dataadr[11]   ; clk        ; 23.072 ; 23.072 ; Rise       ; clk             ;
+;  dataadr[12]   ; clk        ; 22.412 ; 22.412 ; Rise       ; clk             ;
+;  dataadr[13]   ; clk        ; 23.005 ; 23.005 ; Rise       ; clk             ;
+;  dataadr[14]   ; clk        ; 21.956 ; 21.956 ; Rise       ; clk             ;
+;  dataadr[15]   ; clk        ; 23.937 ; 23.937 ; Rise       ; clk             ;
+;  dataadr[16]   ; clk        ; 22.653 ; 22.653 ; Rise       ; clk             ;
+;  dataadr[17]   ; clk        ; 22.388 ; 22.388 ; Rise       ; clk             ;
+;  dataadr[18]   ; clk        ; 21.741 ; 21.741 ; Rise       ; clk             ;
+;  dataadr[19]   ; clk        ; 22.460 ; 22.460 ; Rise       ; clk             ;
+;  dataadr[20]   ; clk        ; 25.135 ; 25.135 ; Rise       ; clk             ;
+;  dataadr[21]   ; clk        ; 24.939 ; 24.939 ; Rise       ; clk             ;
+;  dataadr[22]   ; clk        ; 22.712 ; 22.712 ; Rise       ; clk             ;
+;  dataadr[23]   ; clk        ; 23.213 ; 23.213 ; Rise       ; clk             ;
+;  dataadr[24]   ; clk        ; 22.380 ; 22.380 ; Rise       ; clk             ;
+;  dataadr[25]   ; clk        ; 23.143 ; 23.143 ; Rise       ; clk             ;
+;  dataadr[26]   ; clk        ; 22.540 ; 22.540 ; Rise       ; clk             ;
+;  dataadr[27]   ; clk        ; 25.198 ; 25.198 ; Rise       ; clk             ;
+;  dataadr[28]   ; clk        ; 22.941 ; 22.941 ; Rise       ; clk             ;
+;  dataadr[29]   ; clk        ; 23.155 ; 23.155 ; Rise       ; clk             ;
+;  dataadr[30]   ; clk        ; 22.543 ; 22.543 ; Rise       ; clk             ;
+;  dataadr[31]   ; clk        ; 23.635 ; 23.635 ; Rise       ; clk             ;
+; memwrite       ; clk        ; 11.812 ; 11.812 ; Rise       ; clk             ;
+; writedata[*]   ; clk        ; 19.075 ; 19.075 ; Rise       ; clk             ;
+;  writedata[0]  ; clk        ; 14.971 ; 14.971 ; Rise       ; clk             ;
+;  writedata[1]  ; clk        ; 15.799 ; 15.799 ; Rise       ; clk             ;
+;  writedata[2]  ; clk        ; 15.110 ; 15.110 ; Rise       ; clk             ;
+;  writedata[3]  ; clk        ; 16.056 ; 16.056 ; Rise       ; clk             ;
+;  writedata[4]  ; clk        ; 14.823 ; 14.823 ; Rise       ; clk             ;
+;  writedata[5]  ; clk        ; 15.548 ; 15.548 ; Rise       ; clk             ;
+;  writedata[6]  ; clk        ; 15.027 ; 15.027 ; Rise       ; clk             ;
+;  writedata[7]  ; clk        ; 15.048 ; 15.048 ; Rise       ; clk             ;
+;  writedata[8]  ; clk        ; 14.863 ; 14.863 ; Rise       ; clk             ;
+;  writedata[9]  ; clk        ; 16.227 ; 16.227 ; Rise       ; clk             ;
+;  writedata[10] ; clk        ; 16.334 ; 16.334 ; Rise       ; clk             ;
+;  writedata[11] ; clk        ; 15.068 ; 15.068 ; Rise       ; clk             ;
+;  writedata[12] ; clk        ; 17.025 ; 17.025 ; Rise       ; clk             ;
+;  writedata[13] ; clk        ; 16.151 ; 16.151 ; Rise       ; clk             ;
+;  writedata[14] ; clk        ; 15.416 ; 15.416 ; Rise       ; clk             ;
+;  writedata[15] ; clk        ; 15.062 ; 15.062 ; Rise       ; clk             ;
+;  writedata[16] ; clk        ; 15.959 ; 15.959 ; Rise       ; clk             ;
+;  writedata[17] ; clk        ; 17.180 ; 17.180 ; Rise       ; clk             ;
+;  writedata[18] ; clk        ; 16.561 ; 16.561 ; Rise       ; clk             ;
+;  writedata[19] ; clk        ; 15.760 ; 15.760 ; Rise       ; clk             ;
+;  writedata[20] ; clk        ; 16.335 ; 16.335 ; Rise       ; clk             ;
+;  writedata[21] ; clk        ; 16.403 ; 16.403 ; Rise       ; clk             ;
+;  writedata[22] ; clk        ; 16.316 ; 16.316 ; Rise       ; clk             ;
+;  writedata[23] ; clk        ; 16.628 ; 16.628 ; Rise       ; clk             ;
+;  writedata[24] ; clk        ; 16.213 ; 16.213 ; Rise       ; clk             ;
+;  writedata[25] ; clk        ; 16.843 ; 16.843 ; Rise       ; clk             ;
+;  writedata[26] ; clk        ; 17.034 ; 17.034 ; Rise       ; clk             ;
+;  writedata[27] ; clk        ; 17.267 ; 17.267 ; Rise       ; clk             ;
+;  writedata[28] ; clk        ; 14.896 ; 14.896 ; Rise       ; clk             ;
+;  writedata[29] ; clk        ; 19.075 ; 19.075 ; Rise       ; clk             ;
+;  writedata[30] ; clk        ; 16.514 ; 16.514 ; Rise       ; clk             ;
+;  writedata[31] ; clk        ; 18.191 ; 18.191 ; Rise       ; clk             ;
++----------------+------------+--------+--------+------------+-----------------+
+
+
++----------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                              ;
++----------------+------------+-------+-------+------------+-----------------+
+; Data Port      ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++----------------+------------+-------+-------+------------+-----------------+
+; dataadr[*]     ; clk        ; 5.672 ; 5.672 ; Rise       ; clk             ;
+;  dataadr[0]    ; clk        ; 6.121 ; 6.121 ; Rise       ; clk             ;
+;  dataadr[1]    ; clk        ; 7.132 ; 7.132 ; Rise       ; clk             ;
+;  dataadr[2]    ; clk        ; 5.876 ; 5.876 ; Rise       ; clk             ;
+;  dataadr[3]    ; clk        ; 6.227 ; 6.227 ; Rise       ; clk             ;
+;  dataadr[4]    ; clk        ; 6.304 ; 6.304 ; Rise       ; clk             ;
+;  dataadr[5]    ; clk        ; 6.139 ; 6.139 ; Rise       ; clk             ;
+;  dataadr[6]    ; clk        ; 6.969 ; 6.969 ; Rise       ; clk             ;
+;  dataadr[7]    ; clk        ; 6.547 ; 6.547 ; Rise       ; clk             ;
+;  dataadr[8]    ; clk        ; 6.306 ; 6.306 ; Rise       ; clk             ;
+;  dataadr[9]    ; clk        ; 6.377 ; 6.377 ; Rise       ; clk             ;
+;  dataadr[10]   ; clk        ; 6.416 ; 6.416 ; Rise       ; clk             ;
+;  dataadr[11]   ; clk        ; 6.847 ; 6.847 ; Rise       ; clk             ;
+;  dataadr[12]   ; clk        ; 6.937 ; 6.937 ; Rise       ; clk             ;
+;  dataadr[13]   ; clk        ; 6.716 ; 6.716 ; Rise       ; clk             ;
+;  dataadr[14]   ; clk        ; 6.536 ; 6.536 ; Rise       ; clk             ;
+;  dataadr[15]   ; clk        ; 6.832 ; 6.832 ; Rise       ; clk             ;
+;  dataadr[16]   ; clk        ; 7.030 ; 7.030 ; Rise       ; clk             ;
+;  dataadr[17]   ; clk        ; 6.646 ; 6.646 ; Rise       ; clk             ;
+;  dataadr[18]   ; clk        ; 6.013 ; 6.013 ; Rise       ; clk             ;
+;  dataadr[19]   ; clk        ; 6.420 ; 6.420 ; Rise       ; clk             ;
+;  dataadr[20]   ; clk        ; 6.593 ; 6.593 ; Rise       ; clk             ;
+;  dataadr[21]   ; clk        ; 6.876 ; 6.876 ; Rise       ; clk             ;
+;  dataadr[22]   ; clk        ; 6.255 ; 6.255 ; Rise       ; clk             ;
+;  dataadr[23]   ; clk        ; 6.415 ; 6.415 ; Rise       ; clk             ;
+;  dataadr[24]   ; clk        ; 5.939 ; 5.939 ; Rise       ; clk             ;
+;  dataadr[25]   ; clk        ; 6.077 ; 6.077 ; Rise       ; clk             ;
+;  dataadr[26]   ; clk        ; 5.672 ; 5.672 ; Rise       ; clk             ;
+;  dataadr[27]   ; clk        ; 6.859 ; 6.859 ; Rise       ; clk             ;
+;  dataadr[28]   ; clk        ; 5.747 ; 5.747 ; Rise       ; clk             ;
+;  dataadr[29]   ; clk        ; 6.763 ; 6.763 ; Rise       ; clk             ;
+;  dataadr[30]   ; clk        ; 6.522 ; 6.522 ; Rise       ; clk             ;
+;  dataadr[31]   ; clk        ; 6.915 ; 6.915 ; Rise       ; clk             ;
+; memwrite       ; clk        ; 5.483 ; 5.483 ; Rise       ; clk             ;
+; writedata[*]   ; clk        ; 5.140 ; 5.140 ; Rise       ; clk             ;
+;  writedata[0]  ; clk        ; 5.323 ; 5.323 ; Rise       ; clk             ;
+;  writedata[1]  ; clk        ; 5.722 ; 5.722 ; Rise       ; clk             ;
+;  writedata[2]  ; clk        ; 5.647 ; 5.647 ; Rise       ; clk             ;
+;  writedata[3]  ; clk        ; 6.449 ; 6.449 ; Rise       ; clk             ;
+;  writedata[4]  ; clk        ; 5.538 ; 5.538 ; Rise       ; clk             ;
+;  writedata[5]  ; clk        ; 5.844 ; 5.844 ; Rise       ; clk             ;
+;  writedata[6]  ; clk        ; 5.493 ; 5.493 ; Rise       ; clk             ;
+;  writedata[7]  ; clk        ; 5.768 ; 5.768 ; Rise       ; clk             ;
+;  writedata[8]  ; clk        ; 5.140 ; 5.140 ; Rise       ; clk             ;
+;  writedata[9]  ; clk        ; 6.039 ; 6.039 ; Rise       ; clk             ;
+;  writedata[10] ; clk        ; 5.922 ; 5.922 ; Rise       ; clk             ;
+;  writedata[11] ; clk        ; 5.519 ; 5.519 ; Rise       ; clk             ;
+;  writedata[12] ; clk        ; 5.868 ; 5.868 ; Rise       ; clk             ;
+;  writedata[13] ; clk        ; 5.780 ; 5.780 ; Rise       ; clk             ;
+;  writedata[14] ; clk        ; 5.560 ; 5.560 ; Rise       ; clk             ;
+;  writedata[15] ; clk        ; 5.475 ; 5.475 ; Rise       ; clk             ;
+;  writedata[16] ; clk        ; 5.888 ; 5.888 ; Rise       ; clk             ;
+;  writedata[17] ; clk        ; 5.861 ; 5.861 ; Rise       ; clk             ;
+;  writedata[18] ; clk        ; 6.113 ; 6.113 ; Rise       ; clk             ;
+;  writedata[19] ; clk        ; 5.622 ; 5.622 ; Rise       ; clk             ;
+;  writedata[20] ; clk        ; 5.714 ; 5.714 ; Rise       ; clk             ;
+;  writedata[21] ; clk        ; 5.765 ; 5.765 ; Rise       ; clk             ;
+;  writedata[22] ; clk        ; 5.611 ; 5.611 ; Rise       ; clk             ;
+;  writedata[23] ; clk        ; 5.856 ; 5.856 ; Rise       ; clk             ;
+;  writedata[24] ; clk        ; 5.509 ; 5.509 ; Rise       ; clk             ;
+;  writedata[25] ; clk        ; 5.980 ; 5.980 ; Rise       ; clk             ;
+;  writedata[26] ; clk        ; 5.443 ; 5.443 ; Rise       ; clk             ;
+;  writedata[27] ; clk        ; 5.851 ; 5.851 ; Rise       ; clk             ;
+;  writedata[28] ; clk        ; 5.172 ; 5.172 ; Rise       ; clk             ;
+;  writedata[29] ; clk        ; 6.646 ; 6.646 ; Rise       ; clk             ;
+;  writedata[30] ; clk        ; 5.921 ; 5.921 ; Rise       ; clk             ;
+;  writedata[31] ; clk        ; 6.254 ; 6.254 ; Rise       ; clk             ;
++----------------+------------+-------+-------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Setup Transfers                                                       ;
++------------+----------+--------------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths     ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+--------------+----------+----------+----------+
+; clk        ; clk      ; > 2147483647 ; 0        ; 0        ; 0        ;
++------------+----------+--------------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++-----------------------------------------------------------------------+
+; Hold Transfers                                                        ;
++------------+----------+--------------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths     ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+--------------+----------+----------+----------+
+; clk        ; clk      ; > 2147483647 ; 0        ; 0        ; 0        ;
++------------+----------+--------------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
+---------------
+; Report TCCS ;
+---------------
+No dedicated SERDES Transmitter circuitry present in device or used in design
+
+
+---------------
+; Report RSKM ;
+---------------
+No dedicated SERDES Receiver circuitry present in device or used in design
+
+
++-------------------------------------------------+
+; Unconstrained Paths                             ;
++---------------------------------+-------+-------+
+; Property                        ; Setup ; Hold  ;
++---------------------------------+-------+-------+
+; Illegal Clocks                  ; 0     ; 0     ;
+; Unconstrained Clocks            ; 0     ; 0     ;
+; Unconstrained Input Ports       ; 1     ; 1     ;
+; Unconstrained Input Port Paths  ; 6     ; 6     ;
+; Unconstrained Output Ports      ; 65    ; 65    ;
+; Unconstrained Output Port Paths ; 18790 ; 18790 ;
++---------------------------------+-------+-------+
+
+
++------------------------------------+
+; TimeQuest Timing Analyzer Messages ;
++------------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit TimeQuest Timing Analyzer
+    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+    Info: Processing started: Sat May 01 20:18:14 2021
+Info: Command: quartus_sta Devoir4 -c Devoir4
+Info: qsta_default_script.tcl version: #1
+Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (21077): Low junction temperature is 0 degrees C
+Info (21077): High junction temperature is 85 degrees C
+Critical Warning (332012): Synopsys Design Constraints File file not found: 'Devoir4.sdc'. A Synopsys Design Constraints File is required by the TimeQuest Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
+Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
+Info (332105): Deriving Clocks
+    Info (332105): create_clock -period 1.000 -name clk clk
+Info: Found TIMEQUEST_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
+Info: Analyzing Slow Model
+Critical Warning (332148): Timing requirements not met
+Info (332146): Worst-case setup slack is -20.523
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):   -20.523    -47832.726 clk 
+Info (332146): Worst-case hold slack is 0.391
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     0.391         0.000 clk 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -1.380
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -1.380     -3079.380 clk 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info: Analyzing Fast Model
+Critical Warning (332148): Timing requirements not met
+Info (332146): Worst-case setup slack is -8.620
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -8.620    -19542.974 clk 
+Info (332146): Worst-case hold slack is 0.215
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     0.215         0.000 clk 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -1.380
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -1.380     -3079.380 clk 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info (332102): Design is not fully constrained for setup requirements
+Info (332102): Design is not fully constrained for hold requirements
+Info: Quartus II 64-Bit TimeQuest Timing Analyzer was successful. 0 errors, 4 warnings
+    Info: Peak virtual memory: 4634 megabytes
+    Info: Processing ended: Sat May 01 20:18:18 2021
+    Info: Elapsed time: 00:00:04
+    Info: Total CPU time (on all processors): 00:00:03
+
+

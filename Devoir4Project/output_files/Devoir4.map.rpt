@@ -1,0 +1,556 @@
+Analysis & Synthesis report for Devoir4
+Sat May 01 20:16:23 2021
+Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. Registers Removed During Synthesis
+  9. Removed Registers Triggering Further Register Optimizations
+ 10. General Register Statistics
+ 11. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 12. Parameter Settings for User Entity Instance: proc_mips:mips1|datapath:dp|flopr:pcreg
+ 13. Parameter Settings for User Entity Instance: proc_mips:mips1|datapath:dp|mux2:pcbrmux
+ 14. Parameter Settings for User Entity Instance: proc_mips:mips1|datapath:dp|mux4:pcmux
+ 15. Parameter Settings for User Entity Instance: proc_mips:mips1|datapath:dp|mux2:wrmux
+ 16. Parameter Settings for User Entity Instance: proc_mips:mips1|datapath:dp|mux4:resmux
+ 17. Parameter Settings for User Entity Instance: proc_mips:mips1|datapath:dp|mux4:srcbmux
+ 18. Port Connectivity Checks: "proc_mips:mips1|datapath:dp|alu:mainalu"
+ 19. Port Connectivity Checks: "proc_mips:mips1|datapath:dp|mux4:srcbmux"
+ 20. Port Connectivity Checks: "proc_mips:mips1|datapath:dp|mux4:pcmux"
+ 21. Port Connectivity Checks: "proc_mips:mips1|datapath:dp|adder:pcadd1"
+ 22. Port Connectivity Checks: "proc_mips:mips1"
+ 23. Elapsed Time Per Partition
+ 24. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++--------------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                         ;
++------------------------------------+-------------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Sat May 01 20:16:23 2021           ;
+; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
+; Revision Name                      ; Devoir4                                         ;
+; Top-level Entity Name              ; mips                                            ;
+; Family                             ; Cyclone II                                      ;
+; Total logic elements               ; 6,191                                           ;
+;     Total combinational functions  ; 5,199                                           ;
+;     Dedicated logic registers      ; 3,078                                           ;
+; Total registers                    ; 3078                                            ;
+; Total pins                         ; 67                                              ;
+; Total virtual pins                 ; 0                                               ;
+; Total memory bits                  ; 0                                               ;
+; Embedded Multiplier 9-bit elements ; 0                                               ;
+; Total PLLs                         ; 0                                               ;
++------------------------------------+-------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                        ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                     ; Setting            ; Default Value      ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                     ; EP2C70F672C6       ;                    ;
+; Top-level entity name                                                      ; mips               ; Devoir4            ;
+; Family name                                                                ; Cyclone II         ; Cyclone IV GX      ;
+; Use smart compilation                                                      ; Off                ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                                ; Off                ; Off                ;
+; Restructure Multiplexers                                                   ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                        ; Off                ; Off                ;
+; Preserve fewer node names                                                  ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                                  ; Off                ; Off                ;
+; Verilog Version                                                            ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                               ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                   ; Auto               ; Auto               ;
+; Safe State Machine                                                         ; Off                ; Off                ;
+; Extract Verilog State Machines                                             ; On                 ; On                 ;
+; Extract VHDL State Machines                                                ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                          ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                 ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                             ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                    ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                  ; On                 ; On                 ;
+; Parallel Synthesis                                                         ; On                 ; On                 ;
+; DSP Block Balancing                                                        ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                         ; On                 ; On                 ;
+; Power-Up Don't Care                                                        ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                               ; Off                ; Off                ;
+; Remove Duplicate Registers                                                 ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                       ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                     ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                      ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                  ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                       ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                        ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                             ; Off                ; Off                ;
+; Optimization Technique                                                     ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                         ; 70                 ; 70                 ;
+; Auto Carry Chains                                                          ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                       ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                      ; Off                ; Off                ;
+; Auto ROM Replacement                                                       ; On                 ; On                 ;
+; Auto RAM Replacement                                                       ; On                 ; On                 ;
+; Auto Shift Register Replacement                                            ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                            ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                              ; On                 ; On                 ;
+; Strict RAM Replacement                                                     ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                          ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                     ; Off                ; Off                ;
+; Auto RAM to Logic Cell Conversion                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                      ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                              ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                        ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                          ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                    ; Off                ; Off                ;
+; Report Parameter Settings                                                  ; On                 ; On                 ;
+; Report Source Assignments                                                  ; On                 ; On                 ;
+; Report Connectivity Checks                                                 ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                         ; Off                ; Off                ;
+; Synchronization Register Chain Length                                      ; 2                  ; 2                  ;
+; PowerPlay Power Optimization                                               ; Normal compilation ; Normal compilation ;
+; HDL message level                                                          ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                            ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                   ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                         ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                  ; 100                ; 100                ;
+; Clock MUX Protection                                                       ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                ; Off                ; Off                ;
+; Block Design Naming                                                        ; Auto               ; Auto               ;
+; SDC constraint protection                                                  ; Off                ; Off                ;
+; Synthesis Effort                                                           ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                       ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                         ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                     ; On                 ; On                 ;
+; Synthesis Seed                                                             ; 1                  ; 1                  ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 8      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                 ;
++----------------------------------+-----------------+-----------------+-------------------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                                                          ; Library ;
++----------------------------------+-----------------+-----------------+-------------------------------------------------------------------------------------------------------+---------+
+; files/zeroext.vhd                ; yes             ; User VHDL File  ; C:/Users/intoi/OneDrive/Documents/Université/Session 4/IFT 1227/Devoir4Project/files/zeroext.vhd      ;         ;
+; files/srlComp.vhd                ; yes             ; User VHDL File  ; C:/Users/intoi/OneDrive/Documents/Université/Session 4/IFT 1227/Devoir4Project/files/srlComp.vhd      ;         ;
+; files/sl2.vhd                    ; yes             ; User VHDL File  ; C:/Users/intoi/OneDrive/Documents/Université/Session 4/IFT 1227/Devoir4Project/files/sl2.vhd          ;         ;
+; files/signext.vhd                ; yes             ; User VHDL File  ; C:/Users/intoi/OneDrive/Documents/Université/Session 4/IFT 1227/Devoir4Project/files/signext.vhd      ;         ;
+; files/regfile.vhd                ; yes             ; User VHDL File  ; C:/Users/intoi/OneDrive/Documents/Université/Session 4/IFT 1227/Devoir4Project/files/regfile.vhd      ;         ;
+; files/proc_mips.vhd              ; yes             ; User VHDL File  ; C:/Users/intoi/OneDrive/Documents/Université/Session 4/IFT 1227/Devoir4Project/files/proc_mips.vhd    ;         ;
+; files/mux4.vhd                   ; yes             ; User VHDL File  ; C:/Users/intoi/OneDrive/Documents/Université/Session 4/IFT 1227/Devoir4Project/files/mux4.vhd         ;         ;
+; files/mux2.vhd                   ; yes             ; User VHDL File  ; C:/Users/intoi/OneDrive/Documents/Université/Session 4/IFT 1227/Devoir4Project/files/mux2.vhd         ;         ;
+; files/mips.vhd                   ; yes             ; User VHDL File  ; C:/Users/intoi/OneDrive/Documents/Université/Session 4/IFT 1227/Devoir4Project/files/mips.vhd         ;         ;
+; files/maindec.vhd                ; yes             ; User VHDL File  ; C:/Users/intoi/OneDrive/Documents/Université/Session 4/IFT 1227/Devoir4Project/files/maindec.vhd      ;         ;
+; files/imem.vhd                   ; yes             ; User VHDL File  ; C:/Users/intoi/OneDrive/Documents/Université/Session 4/IFT 1227/Devoir4Project/files/imem.vhd         ;         ;
+; files/flopr.vhd                  ; yes             ; User VHDL File  ; C:/Users/intoi/OneDrive/Documents/Université/Session 4/IFT 1227/Devoir4Project/files/flopr.vhd        ;         ;
+; files/dmem.vhd                   ; yes             ; User VHDL File  ; C:/Users/intoi/OneDrive/Documents/Université/Session 4/IFT 1227/Devoir4Project/files/dmem.vhd         ;         ;
+; files/datapath.vhd               ; yes             ; User VHDL File  ; C:/Users/intoi/OneDrive/Documents/Université/Session 4/IFT 1227/Devoir4Project/files/datapath.vhd     ;         ;
+; files/controller.vhd             ; yes             ; User VHDL File  ; C:/Users/intoi/OneDrive/Documents/Université/Session 4/IFT 1227/Devoir4Project/files/controller.vhd   ;         ;
+; files/byteselector.vhd           ; yes             ; User VHDL File  ; C:/Users/intoi/OneDrive/Documents/Université/Session 4/IFT 1227/Devoir4Project/files/byteselector.vhd ;         ;
+; files/aludec.vhd                 ; yes             ; User VHDL File  ; C:/Users/intoi/OneDrive/Documents/Université/Session 4/IFT 1227/Devoir4Project/files/aludec.vhd       ;         ;
+; files/alu.vhd                    ; yes             ; User VHDL File  ; C:/Users/intoi/OneDrive/Documents/Université/Session 4/IFT 1227/Devoir4Project/files/alu.vhd          ;         ;
+; files/adder.vhd                  ; yes             ; User VHDL File  ; C:/Users/intoi/OneDrive/Documents/Université/Session 4/IFT 1227/Devoir4Project/files/adder.vhd        ;         ;
++----------------------------------+-----------------+-----------------+-------------------------------------------------------------------------------------------------------+---------+
+
+
++-----------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary         ;
++---------------------------------------------+-------+
+; Resource                                    ; Usage ;
++---------------------------------------------+-------+
+; Estimated Total logic elements              ; 6,191 ;
+;                                             ;       ;
+; Total combinational functions               ; 5199  ;
+; Logic element usage by number of LUT inputs ;       ;
+;     -- 4 input functions                    ; 4899  ;
+;     -- 3 input functions                    ; 150   ;
+;     -- <=2 input functions                  ; 150   ;
+;                                             ;       ;
+; Logic elements by mode                      ;       ;
+;     -- normal mode                          ; 5127  ;
+;     -- arithmetic mode                      ; 72    ;
+;                                             ;       ;
+; Total registers                             ; 3078  ;
+;     -- Dedicated logic registers            ; 3078  ;
+;     -- I/O registers                        ; 0     ;
+;                                             ;       ;
+; I/O pins                                    ; 67    ;
+; Embedded Multiplier 9-bit elements          ; 0     ;
+; Maximum fan-out node                        ; clk   ;
+; Maximum fan-out                             ; 3078  ;
+; Total fan-out                               ; 27596 ;
+; Average fan-out                             ; 3.31  ;
++---------------------------------------------+-------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                       ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------+--------------+
+; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                               ; Library Name ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------+--------------+
+; |mips                      ; 5199 (10)         ; 3078 (0)     ; 0           ; 0            ; 0       ; 0         ; 67   ; 0            ; |mips                                             ; work         ;
+;    |dmem:dmem1|            ; 3408 (3408)       ; 2048 (2048)  ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mips|dmem:dmem1                                  ; work         ;
+;    |imem:imem1|            ; 107 (107)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mips|imem:imem1                                  ; work         ;
+;    |proc_mips:mips1|       ; 1674 (0)          ; 1030 (0)     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mips|proc_mips:mips1                             ; work         ;
+;       |controller:cont|    ; 32 (13)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mips|proc_mips:mips1|controller:cont             ; work         ;
+;          |aludec:ad|       ; 5 (5)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mips|proc_mips:mips1|controller:cont|aludec:ad   ; work         ;
+;          |maindec:md|      ; 14 (14)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mips|proc_mips:mips1|controller:cont|maindec:md  ; work         ;
+;       |datapath:dp|        ; 1642 (0)          ; 1030 (0)     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mips|proc_mips:mips1|datapath:dp                 ; work         ;
+;          |adder:pcadd1|    ; 6 (6)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mips|proc_mips:mips1|datapath:dp|adder:pcadd1    ; work         ;
+;          |adder:pcadd2|    ; 6 (6)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mips|proc_mips:mips1|datapath:dp|adder:pcadd2    ; work         ;
+;          |alu:mainalu|     ; 329 (329)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mips|proc_mips:mips1|datapath:dp|alu:mainalu     ; work         ;
+;          |flopr:pcreg|     ; 3 (3)             ; 6 (6)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mips|proc_mips:mips1|datapath:dp|flopr:pcreg     ; work         ;
+;          |mux2:wrmux|      ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mips|proc_mips:mips1|datapath:dp|mux2:wrmux      ; work         ;
+;          |mux4:pcmux|      ; 18 (18)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mips|proc_mips:mips1|datapath:dp|mux4:pcmux      ; work         ;
+;          |mux4:resmux|     ; 105 (105)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mips|proc_mips:mips1|datapath:dp|mux4:resmux     ; work         ;
+;          |mux4:srcbmux|    ; 36 (36)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mips|proc_mips:mips1|datapath:dp|mux4:srcbmux    ; work         ;
+;          |regfile:rf|      ; 1104 (1104)       ; 1024 (1024)  ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mips|proc_mips:mips1|datapath:dp|regfile:rf      ; work         ;
+;          |srlComp:decSrcA| ; 31 (31)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mips|proc_mips:mips1|datapath:dp|srlComp:decSrcA ; work         ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++---------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                        ;
++------------------------------------------------------+--------------------+
+; Register name                                        ; Reason for Removal ;
++------------------------------------------------------+--------------------+
+; proc_mips:mips1|datapath:dp|flopr:pcreg|q[0,1,8..31] ; Lost fanout        ;
+; Total Number of Removed Registers = 26               ;                    ;
++------------------------------------------------------+--------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                         ;
++-----------------------------------------------+--------------------+------------------------------------------------+
+; Register name                                 ; Reason for Removal ; Registers Removed due to This Register         ;
++-----------------------------------------------+--------------------+------------------------------------------------+
+; proc_mips:mips1|datapath:dp|flopr:pcreg|q[31] ; Lost Fanouts       ; proc_mips:mips1|datapath:dp|flopr:pcreg|q[30], ;
+;                                               ;                    ; proc_mips:mips1|datapath:dp|flopr:pcreg|q[29], ;
+;                                               ;                    ; proc_mips:mips1|datapath:dp|flopr:pcreg|q[28], ;
+;                                               ;                    ; proc_mips:mips1|datapath:dp|flopr:pcreg|q[27], ;
+;                                               ;                    ; proc_mips:mips1|datapath:dp|flopr:pcreg|q[26], ;
+;                                               ;                    ; proc_mips:mips1|datapath:dp|flopr:pcreg|q[25], ;
+;                                               ;                    ; proc_mips:mips1|datapath:dp|flopr:pcreg|q[24]  ;
+; proc_mips:mips1|datapath:dp|flopr:pcreg|q[12] ; Lost Fanouts       ; proc_mips:mips1|datapath:dp|flopr:pcreg|q[11], ;
+;                                               ;                    ; proc_mips:mips1|datapath:dp|flopr:pcreg|q[10], ;
+;                                               ;                    ; proc_mips:mips1|datapath:dp|flopr:pcreg|q[9],  ;
+;                                               ;                    ; proc_mips:mips1|datapath:dp|flopr:pcreg|q[8]   ;
+; proc_mips:mips1|datapath:dp|flopr:pcreg|q[23] ; Lost Fanouts       ; proc_mips:mips1|datapath:dp|flopr:pcreg|q[22]  ;
+; proc_mips:mips1|datapath:dp|flopr:pcreg|q[20] ; Lost Fanouts       ; proc_mips:mips1|datapath:dp|flopr:pcreg|q[19]  ;
+; proc_mips:mips1|datapath:dp|flopr:pcreg|q[18] ; Lost Fanouts       ; proc_mips:mips1|datapath:dp|flopr:pcreg|q[17]  ;
+; proc_mips:mips1|datapath:dp|flopr:pcreg|q[16] ; Lost Fanouts       ; proc_mips:mips1|datapath:dp|flopr:pcreg|q[15]  ;
+; proc_mips:mips1|datapath:dp|flopr:pcreg|q[14] ; Lost Fanouts       ; proc_mips:mips1|datapath:dp|flopr:pcreg|q[13]  ;
++-----------------------------------------------+--------------------+------------------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 3078  ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 6     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 1024  ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                      ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                            ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------+
+; 4:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |mips|proc_mips:mips1|datapath:dp|flopr:pcreg|q[1]    ;
+; 4:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; Yes        ; |mips|proc_mips:mips1|datapath:dp|flopr:pcreg|q[10]   ;
+; 5:1                ; 4 bits    ; 12 LEs        ; 8 LEs                ; 4 LEs                  ; Yes        ; |mips|proc_mips:mips1|datapath:dp|flopr:pcreg|q[31]   ;
+; 5:1                ; 20 bits   ; 60 LEs        ; 60 LEs               ; 0 LEs                  ; Yes        ; |mips|proc_mips:mips1|datapath:dp|flopr:pcreg|q[14]   ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |mips|proc_mips:mips1|controller:cont|aludec:ad|Mux3  ;
+; 4:1                ; 13 bits   ; 26 LEs        ; 26 LEs               ; 0 LEs                  ; No         ; |mips|proc_mips:mips1|datapath:dp|mux4:srcbmux|y[3]   ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |mips|proc_mips:mips1|datapath:dp|mux4:srcbmux|y[10]  ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; No         ; |mips|proc_mips:mips1|datapath:dp|mux4:srcbmux|y[24]  ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; No         ; |mips|proc_mips:mips1|datapath:dp|mux4:resmux|y[30]   ;
+; 6:1                ; 21 bits   ; 84 LEs        ; 84 LEs               ; 0 LEs                  ; No         ; |mips|proc_mips:mips1|datapath:dp|mux4:resmux|y[12]   ;
+; 6:1                ; 6 bits    ; 24 LEs        ; 18 LEs               ; 6 LEs                  ; No         ; |mips|proc_mips:mips1|datapath:dp|mux4:resmux|y[7]    ;
+; 7:1                ; 2 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |mips|proc_mips:mips1|datapath:dp|mux4:resmux|y[1]    ;
+; 64:1               ; 30 bits   ; 1260 LEs      ; 240 LEs              ; 1020 LEs               ; No         ; |mips|proc_mips:mips1|datapath:dp|alu:mainalu|Mux9    ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 6 LEs                ; 2 LEs                  ; No         ; |mips|proc_mips:mips1|controller:cont|maindec:md|Mux1 ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: proc_mips:mips1|datapath:dp|flopr:pcreg ;
++----------------+-------+-------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                        ;
++----------------+-------+-------------------------------------------------------------+
+; width          ; 32    ; Signed Integer                                              ;
++----------------+-------+-------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: proc_mips:mips1|datapath:dp|mux2:pcbrmux ;
++----------------+-------+--------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                         ;
++----------------+-------+--------------------------------------------------------------+
+; width          ; 32    ; Signed Integer                                               ;
++----------------+-------+--------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: proc_mips:mips1|datapath:dp|mux4:pcmux ;
++----------------+-------+------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                       ;
++----------------+-------+------------------------------------------------------------+
+; width          ; 32    ; Signed Integer                                             ;
++----------------+-------+------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: proc_mips:mips1|datapath:dp|mux2:wrmux ;
++----------------+-------+------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                       ;
++----------------+-------+------------------------------------------------------------+
+; width          ; 5     ; Signed Integer                                             ;
++----------------+-------+------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: proc_mips:mips1|datapath:dp|mux4:resmux ;
++----------------+-------+-------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                        ;
++----------------+-------+-------------------------------------------------------------+
+; width          ; 32    ; Signed Integer                                              ;
++----------------+-------+-------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: proc_mips:mips1|datapath:dp|mux4:srcbmux ;
++----------------+-------+--------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                         ;
++----------------+-------+--------------------------------------------------------------+
+; width          ; 32    ; Signed Integer                                               ;
++----------------+-------+--------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "proc_mips:mips1|datapath:dp|alu:mainalu"                                                                                                      ;
++-------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; Port  ; Type   ; Severity ; Details                                                                                                                                      ;
++-------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; o     ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                          ;
+; shamt ; Input  ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
++-------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------+
+; Port Connectivity Checks: "proc_mips:mips1|datapath:dp|mux4:srcbmux" ;
++------+-------+----------+--------------------------------------------+
+; Port ; Type  ; Severity ; Details                                    ;
++------+-------+----------+--------------------------------------------+
+; d3   ; Input ; Info     ; Stuck at GND                               ;
++------+-------+----------+--------------------------------------------+
+
+
++--------------------------------------------------------------------+
+; Port Connectivity Checks: "proc_mips:mips1|datapath:dp|mux4:pcmux" ;
++----------+-------+----------+--------------------------------------+
+; Port     ; Type  ; Severity ; Details                              ;
++----------+-------+----------+--------------------------------------+
+; d1[1..0] ; Input ; Info     ; Stuck at GND                         ;
+; d3       ; Input ; Info     ; Stuck at GND                         ;
++----------+-------+----------+--------------------------------------+
+
+
++----------------------------------------------------------------------+
+; Port Connectivity Checks: "proc_mips:mips1|datapath:dp|adder:pcadd1" ;
++----------+-------+----------+----------------------------------------+
+; Port     ; Type  ; Severity ; Details                                ;
++----------+-------+----------+----------------------------------------+
+; b[31..3] ; Input ; Info     ; Stuck at GND                           ;
+; b[1..0]  ; Input ; Info     ; Stuck at GND                           ;
+; b[2]     ; Input ; Info     ; Stuck at VCC                           ;
++----------+-------+----------+----------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "proc_mips:mips1"                                                                         ;
++-----------+--------+----------+-------------------------------------------------------------------------------------+
+; Port      ; Type   ; Severity ; Details                                                                             ;
++-----------+--------+----------+-------------------------------------------------------------------------------------+
+; pc[31..8] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; pc[1..0]  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-----------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:28     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit Analysis & Synthesis
+    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+    Info: Processing started: Sat May 01 20:15:51 2021
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Devoir4 -c Devoir4
+Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (12021): Found 2 design units, including 1 entities, in source file files/zeroext.vhd
+    Info (12022): Found design unit 1: zeroext-behave
+    Info (12023): Found entity 1: zeroext
+Info (12021): Found 2 design units, including 1 entities, in source file files/testbench.vhd
+    Info (12022): Found design unit 1: testbench-test
+    Info (12023): Found entity 1: testbench
+Info (12021): Found 2 design units, including 1 entities, in source file files/srlcomp.vhd
+    Info (12022): Found design unit 1: srlComp-behave2
+    Info (12023): Found entity 1: srlComp
+Info (12021): Found 2 design units, including 1 entities, in source file files/sl2.vhd
+    Info (12022): Found design unit 1: sl2-behave
+    Info (12023): Found entity 1: sl2
+Info (12021): Found 2 design units, including 1 entities, in source file files/signext.vhd
+    Info (12022): Found design unit 1: signext-behave
+    Info (12023): Found entity 1: signext
+Info (12021): Found 2 design units, including 1 entities, in source file files/regfile.vhd
+    Info (12022): Found design unit 1: regfile-behave
+    Info (12023): Found entity 1: regfile
+Info (12021): Found 2 design units, including 1 entities, in source file files/proc_mips.vhd
+    Info (12022): Found design unit 1: proc_mips-struct
+    Info (12023): Found entity 1: proc_mips
+Info (12021): Found 2 design units, including 1 entities, in source file files/mux4.vhd
+    Info (12022): Found design unit 1: mux4-behave3
+    Info (12023): Found entity 1: mux4
+Info (12021): Found 2 design units, including 1 entities, in source file files/mux2.vhd
+    Info (12022): Found design unit 1: mux2-behave
+    Info (12023): Found entity 1: mux2
+Info (12021): Found 2 design units, including 1 entities, in source file files/mips.vhd
+    Info (12022): Found design unit 1: mips-test
+    Info (12023): Found entity 1: mips
+Info (12021): Found 2 design units, including 1 entities, in source file files/maindec.vhd
+    Info (12022): Found design unit 1: maindec-behave
+    Info (12023): Found entity 1: maindec
+Info (12021): Found 2 design units, including 1 entities, in source file files/imem.vhd
+    Info (12022): Found design unit 1: imem-behave
+    Info (12023): Found entity 1: imem
+Info (12021): Found 2 design units, including 1 entities, in source file files/flopr.vhd
+    Info (12022): Found design unit 1: flopr-asynchronous
+    Info (12023): Found entity 1: flopr
+Info (12021): Found 2 design units, including 1 entities, in source file files/dmem.vhd
+    Info (12022): Found design unit 1: dmem-behave
+    Info (12023): Found entity 1: dmem
+Info (12021): Found 2 design units, including 1 entities, in source file files/datapath.vhd
+    Info (12022): Found design unit 1: datapath-struct
+    Info (12023): Found entity 1: datapath
+Info (12021): Found 2 design units, including 1 entities, in source file files/controller.vhd
+    Info (12022): Found design unit 1: controller-struct
+    Info (12023): Found entity 1: controller
+Info (12021): Found 2 design units, including 1 entities, in source file files/byteselector.vhd
+    Info (12022): Found design unit 1: byteselector-behave
+    Info (12023): Found entity 1: byteselector
+Info (12021): Found 2 design units, including 1 entities, in source file files/aludec.vhd
+    Info (12022): Found design unit 1: aludec-behave
+    Info (12023): Found entity 1: aludec
+Info (12021): Found 2 design units, including 1 entities, in source file files/alu.vhd
+    Info (12022): Found design unit 1: alu-behave
+    Info (12023): Found entity 1: alu
+Info (12021): Found 2 design units, including 1 entities, in source file files/adder.vhd
+    Info (12022): Found design unit 1: adder-behave
+    Info (12023): Found entity 1: adder
+Info (12127): Elaborating entity "mips" for the top level hierarchy
+Info (12128): Elaborating entity "proc_mips" for hierarchy "proc_mips:mips1"
+Info (12128): Elaborating entity "controller" for hierarchy "proc_mips:mips1|controller:cont"
+Info (12128): Elaborating entity "maindec" for hierarchy "proc_mips:mips1|controller:cont|maindec:md"
+Warning (10492): VHDL Process Statement warning at maindec.vhd(19): signal "funct" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at maindec.vhd(20): signal "funct" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at maindec.vhd(21): signal "funct" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Info (12128): Elaborating entity "aludec" for hierarchy "proc_mips:mips1|controller:cont|aludec:ad"
+Info (12128): Elaborating entity "datapath" for hierarchy "proc_mips:mips1|datapath:dp"
+Warning (10036): Verilog HDL or VHDL warning at datapath.vhd(79): object "overflow" assigned a value but never read
+Info (12128): Elaborating entity "flopr" for hierarchy "proc_mips:mips1|datapath:dp|flopr:pcreg"
+Info (12128): Elaborating entity "adder" for hierarchy "proc_mips:mips1|datapath:dp|adder:pcadd1"
+Info (12128): Elaborating entity "sl2" for hierarchy "proc_mips:mips1|datapath:dp|sl2:immsh"
+Info (12128): Elaborating entity "mux2" for hierarchy "proc_mips:mips1|datapath:dp|mux2:pcbrmux"
+Info (12128): Elaborating entity "mux4" for hierarchy "proc_mips:mips1|datapath:dp|mux4:pcmux"
+Info (12128): Elaborating entity "regfile" for hierarchy "proc_mips:mips1|datapath:dp|regfile:rf"
+Info (12128): Elaborating entity "mux2" for hierarchy "proc_mips:mips1|datapath:dp|mux2:wrmux"
+Info (12128): Elaborating entity "signext" for hierarchy "proc_mips:mips1|datapath:dp|signext:se"
+Info (12128): Elaborating entity "srlComp" for hierarchy "proc_mips:mips1|datapath:dp|srlComp:decSrcA"
+Info (12128): Elaborating entity "zeroext" for hierarchy "proc_mips:mips1|datapath:dp|zeroext:ze"
+Info (12128): Elaborating entity "alu" for hierarchy "proc_mips:mips1|datapath:dp|alu:mainalu"
+Info (12128): Elaborating entity "byteselector" for hierarchy "proc_mips:mips1|datapath:dp|byteselector:bytese"
+Info (12128): Elaborating entity "imem" for hierarchy "imem:imem1"
+Warning (10873): Using initial value X (don't care) for net "mem[63..43]" at imem.vhd(15)
+Info (12128): Elaborating entity "dmem" for hierarchy "dmem:dmem1"
+Info (276014): Found 2 instances of uninferred RAM logic
+    Info (276007): RAM logic "proc_mips:mips1|datapath:dp|regfile:rf|mem" is uninferred due to asynchronous read logic
+    Info (276007): RAM logic "dmem:dmem1|mem" is uninferred due to asynchronous read logic
+Warning (12241): 1 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Info (17049): 26 registers lost all their fanouts during netlist optimizations.
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 8338 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 2 input pins
+    Info (21059): Implemented 65 output pins
+    Info (21061): Implemented 8271 logic cells
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 7 warnings
+    Info: Peak virtual memory: 4640 megabytes
+    Info: Processing ended: Sat May 01 20:16:23 2021
+    Info: Elapsed time: 00:00:32
+    Info: Total CPU time (on all processors): 00:00:31
+
+
